@@ -42,9 +42,9 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input data-selector="form-element-datepicker" type="input" class="form-control" id="{event.id}-date-form-class" value="{event.start -> f:format.date(format: 'd.m.Y')}"/>
+                                <input data-selector="form-element-datepicker" type="input" class="form-control" id="{event.id}-date-form-class" value="{dateTime -> f:format.date(format: 'd.m.Y')}"/>
                                 <label for="{event.id}-date-form-class">Datum *</label>
-                                <f:form.hidden additionalAttributes="{data-selector: 'form-element-date'}" property="date" value="{event.dateTime}"/>
+                                <f:form.hidden additionalAttributes="{data-selector: 'form-element-date'}" property="date" value="{dateTime}"/>
                             </div>
 
                             <div class="grid g-3">

@@ -204,7 +204,7 @@
 <div data-selector="events-modal-container">
     <f:if condition="{eventObjects}">
         <f:for each="{eventObjects}" as="event">
-            <f:render partial="Calendar/Event" section="EventModal" arguments="{event: event, subjects: subjects, classrooms: classrooms, rooms: rooms, settings: settings}"/>
+            <f:render partial="Calendar/Event" section="EventModal" arguments="{event: event, dateTime: event.dateTime, subjects: subjects, classrooms: classrooms, rooms: rooms, settings: settings}"/>
         </f:for>
     </f:if>
 </div>

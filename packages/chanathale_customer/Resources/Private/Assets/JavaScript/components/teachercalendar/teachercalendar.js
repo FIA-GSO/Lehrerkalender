@@ -75,6 +75,7 @@ export class Teachercalendar {
                 nowIndicator: true,
                 expandRows: true,
                 weekNumbers: true,
+                nextDayThreshold: '23:59:59',
                 eventDidMount: function (data) {
                     data.el.setAttribute('data-selector', (data.event.extendedProps.type + '-modal-trigger'));
                     data.el.setAttribute('data-bs-toggle', 'modal');

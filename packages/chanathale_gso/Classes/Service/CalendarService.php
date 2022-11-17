@@ -133,6 +133,7 @@ class CalendarService implements SingletonInterface {
                             $room->_setProperty('uid', $eventObject['room']);
                             $subject = new Subject();
                             $subject->_setProperty('uid', $eventObject['subject']);
+                            $startTstamp = strtotime($eventObject['start']);
 
                             /** @var Event $event */
                             $event = new Event();
@@ -143,7 +144,7 @@ class CalendarService implements SingletonInterface {
                             $event->setSubject($subject);
                             $event->setClassroom($classroom);
                             $event->setRoom($room);
-                            $event->setDateTime((int) $eventObject['tstamp']);
+                            $event->setDateTime(($startTstamp));
                             $eventObjects[] = $event;
                         }
 
