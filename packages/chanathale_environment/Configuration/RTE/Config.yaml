@@ -1,0 +1,82 @@
+# Load default processing options
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    # the CSS file to be used inside the editor
+    contentsCss: "/assets/css/css.rte.min.css?v=20202606000043"
+    # will be overridden by the record (if a language is set)
+    defaultContentLanguage: "de"
+    defaultLanguage: "de"
+    contentsLanguage: "de"
+    language: "de"
+    scayt_autoStartup: false # Spellcheck always on
+    scayt_sLang: "de_DE" # spellcheck language
+    wsc_lang: "de_DE"
+
+    # * = for already allowed elements, allow attributes [], allow all classnames (*)
+    # allow for iframe all attributes and all classnames
+    #extraAllowedContent: "*[data-*,onclick](*);iframe[*](*)"
+
+    # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
+    # remove [] to activate block level, inline, list & link styles
+    stylesSet:
+      # table styles
+      - { name: "Tabellenkopf zweizeilig", element: "table", attributes: { class: "table table-responsive table-two-heads" } }
+      # list styles
+      - { name: "Liste mit Pfeil-Icon", element: "ul", attributes: { class: "list-icon list-icon--arrow" } }
+      # link styles
+      - { name: "Button Hintergrund Blau", element: "a", attributes: { class: "button button--primary"} }
+      - { name: "Button Hintergrund Grün", element: "a", attributes: { class: "button button--secondary"} }
+      - { name: "Button Rand Blau", element: "a", attributes: { class: "button button--ghost"} }
+      - { name: "Button Rand Grün", element: "a", attributes: { class: "button button--ghost--secondary"} }
+
+
+    format_tags: "p;h1;h2;h3;h4"
+
+    # configurator: http://ckeditor.com/latest/samples/toolbarconfigurator/index.html#advanced
+    toolbar:
+      - [ 'Cut', 'Copy', 'Paste' ]
+      - [ 'Undo', 'Redo' ]
+      - [ 'Find', 'Replace' ]
+      - [ 'Maximize' ]
+      - [ 'Source' ]
+      - "/"
+      - [ 'Styles', 'Format' ]
+      - [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript' ]
+      - [ 'JustifyLeft', 'JustifyCenter' ]
+      - [ 'NumberedList', 'BulletedList' ]
+      - [ 'Link', 'Unlink' ]
+      - [ 'Table' ]
+      - [ 'SpecialChar' ]
+      - [ 'RemoveFormat' ]
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - specialchar
+      - showblocks
+      - font
+      - find
+      - bidi
+
+    removePlugins:
+      - image
+
+    removeButtons:
+
+# Allow s and u tag
+processing:
+  allowTags:
+    - s
+    - u

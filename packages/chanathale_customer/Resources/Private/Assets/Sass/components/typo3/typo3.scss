@@ -1,0 +1,100 @@
+@import "~bootstrap/scss/bootstrap-utilities.scss";
+@import "variables";
+
+/// Map deep get
+/// @author Kitty Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// prevent sass-compiler from converting hsl colors to hex
+@function hsl($h, $s, $l) {
+  @return unquote('hsl(#{$h}, #{$s}, #{$l})');
+}
+// prevent sass-compiler from converting hsla colors to hex
+@function hsla($h, $s, $l, $a) {
+  @return unquote('hsl(#{$h}, #{$s}, #{$l}, #{$a})');
+}
+
+
+.frame-layout-1 {
+
+}
+
+.frame-layout-2 {
+  max-width: calc(1316px + (6.4rem * 2));
+  padding: 0 6.4rem;
+  margin: 0 auto;
+}
+
+// padding sizes
+@include globalVariable {
+  --padding-x-xs: 2.4rem;
+  --padding-x-lg: 6.4rem;
+}
+
+// container sizes
+$container: (
+        s: (
+                max-width-container: 860px
+        ),
+        sm: (
+                max-width-container: 960px
+        ),
+        m: (
+                max-width-container: 1316px
+        ),
+        l: (
+                max-width-container: 1920px
+        )
+);
+
+// declare container variables and css variables
+@each $size, $sizes in $container {
+  @each $label, $value in $sizes {
+    @include globalVariable {
+      --#{$label}-#{$size}: calc(#{$value} + (var(--padding-x-lg) * 2));
+    }
+
+    .container--#{$size} {
+      padding: 0 var(--padding-x-xs);
+    }
+
+    @include media-breakpoint-up(lg) {
+      .container--#{$size} {
+        max-width: var(--#{$label}-#{$size});
+        padding: 0 var(--padding-x-lg);
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.bsGutterY1-5 {
+  --bs-gutter-y: 1.5rem !important;
+}
+
+.container--l,
+.container--m {
+  .container--sm {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: map-deep-get($container, "sm", "max-width-container") !important;
+  }
+}
+
+.container--l,
+.container--m {
+  .container--s {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: map-deep-get($container, "s", "max-width-container") !important;
+  }
+}

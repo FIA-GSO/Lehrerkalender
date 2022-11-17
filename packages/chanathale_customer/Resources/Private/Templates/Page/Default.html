@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<body class="background-color-fair-2">
+<f:if condition="{data.uid} !== 31">
+    <f:render partial="Navbar" arguments="{_all}"/>
+</f:if>
+
+<main>
+    <!--TYPO3SEARCH_begin-->
+    {header -> f:format.raw()}
+
+    <f:if condition="{data.uid} !== 31">
+        <f:render partial="Breadcrumb" arguments="{_all}"/>
+    </f:if>
+
+    {content -> f:format.raw()}
+
+    <!--TYPO3SEARCH_end-->
+</main>
+
+<f:render partial="Footer" arguments="{_all}"/>
+
+</body>
+
+</html>

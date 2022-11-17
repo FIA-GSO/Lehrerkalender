@@ -1,0 +1,16 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:section name="ClassroomCard">
+    <div class="g-col-xxl-4 g-col-xl-4 g-col-lg-4 g-col-md-12 g-col-sm-12 g-col-12">
+        <f:link.action action="show" controller="Classroom" pluginName="ClassroomDetail" pageUid="38" extensionName="ChanathaleGso" arguments="{classroom: classroom}" class="card classroom-card border-0 rounded-0" additionalAttributes="{data-selector: 'classroom-record'}">
+            <div class="card-body">
+                <h3 class="d-flex justify-content-center">{classroom.title}</h3>
+            </div>
+        </f:link.action>
+    </div>
+</f:section>
+
+</html>

@@ -1,0 +1,29 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div id="loader" class="loader"></div>
+<div class="container">
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-evenly border-bottom pb-3 mb-3">
+
+            <f:for each="{subfooter}" as="item">
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <li class="nav-item">
+                            <f:link.page pageUid="{item.data.uid}" class="nav-link px-2 text-muted text-center">{item.title}
+                            </f:link.page>
+                        </li>
+                    </h6>
+                </div>
+            </f:for>
+
+        </ul>
+        <p class="text-center text-muted">
+
+        </p>
+    </footer>
+</div>
+
+</html>

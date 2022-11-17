@@ -1,0 +1,137 @@
+base: 'https://gso-lehrerkalender.de'
+baseVariants:
+  -
+    base: 'https://gso-lehrerkalender.local'
+    condition: 'applicationContext == "Development/Windows"'
+  -
+    base: 'https://www.gso-lehrerkalender.test'
+    condition: 'applicationContext == "Development"'
+  -
+    base: 'https://lehrerkalender.thescape.de'
+    condition: 'applicationContext == "Production/Staging"'
+  -
+    base: 'https://gso-lehrerkalender.de'
+    condition: 'applicationContext == "Production"'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=8'
+  -
+    errorCode: 403
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=13'
+  -
+    errorCode: 500
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=12'
+  -
+    errorCode: 503
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=14'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-de
+    direction: ltr
+    flag: de
+    websiteTitle: ''
+rootPageId: 1
+routeEnhancers:
+  PupilDetail:
+    type: Extbase
+    extension: ChanathaleGso
+    plugin: PupilDetail
+    routes:
+      - routePath: '/{pupil_number}'
+        _controller: 'Pupil::show'
+        _arguments:
+          pupil_number: pupil
+    aspects:
+      pupil_number:
+        type: PersistedAliasMapper
+        tableName: tx_chanathalegso_domain_model_pupil
+        routeFieldName: url_slug
+  ClassroomDetail:
+    type: Extbase
+    extension: ChanathaleGso
+    plugin: ClassroomDetail
+    routes:
+      - routePath: '/{title}'
+        _controller: 'Classroom::show'
+        _arguments:
+          title: classroom
+    aspects:
+      title:
+        type: PersistedAliasMapper
+        tableName: tx_chanathalegso_domain_model_classroom
+        routeFieldName: url_slug
+  PageTypes:
+    type: PageType
+    default: ''
+    index: index
+    map:
+      sitemap.xml: 1533906435
+      .savepupilform: 8000
+      .saveclassroomform: 8001
+      .savegradeform: 8002
+      .filterperformance: 8003
+      .saveevent: 8004
+      .savemeeting: 8005
+      .deletepupil: 8006
+      .deletemeeting: 8007
+      .deleteevent: 8008
+      .deleteperformance: 8009
+routes:
+  -
+    route: robots.txt
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/robots.txt
+  -
+    route: manifest.webmanifest
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/manifest.webmanifest
+  -
+    route: browserconfig.xml
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/browserconfig.xml
+  -
+    route: android-chrome-192x192.png
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/android-chrome-192x192.png
+  -
+    route: android-chrome-512x512.png
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/android-chrome-512x512.png
+  -
+    route: apple-touch-icon.png
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/apple-touch-icon.png
+  -
+    route: favicon.ico
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/favicon.ico
+  -
+    route: favicon-16x16.png
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/favicon-16x16.png
+  -
+    route: favicon-32x32.png
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/favicon-32x32.png
+  -
+    route: mstile-150x150.png
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/mstile-150x150.png
+  -
+    route: safari-pinned-tab.svg
+    type: uri
+    source: /typo3conf/ext/chanathale_customer/Resources/Public/StaticRoutes/Favicons/safari-pinned-tab.svg
+websiteTitle: ''

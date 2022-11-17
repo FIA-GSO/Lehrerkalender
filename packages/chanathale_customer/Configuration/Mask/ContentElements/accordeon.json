@@ -1,0 +1,343 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "accordeon": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_beb8344709ed7",
+                        "tx_mask_0a96a85b8d8da"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "accordeon",
+                    "label": "Akkordeon",
+                    "labels": [
+                        "",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 3
+                }
+            },
+            "palettes": {
+                "tx_mask_0a96a85b8d8da": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_tx_mask_accordeon_item"
+                    ]
+                },
+                "tx_mask_beb8344709ed7": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header",
+                        "tx_mask_4719eef42b221",
+                        "subheader",
+                        "tx_mask_3c5b1b47da62f",
+                        "header_layout",
+                        "header_position"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_tx_mask_accordeon_item": {
+                    "tt_content": {
+                        "tx_mask_tx_mask_accordeon_item": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "fullKey": "header",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7",
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "header": "tx_mask_cd65d59e47253",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "header",
+                    "label": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "order": {
+                        "accordeon": 1,
+                        "gallary": 1,
+                        "header": 1,
+                        "headline": 1
+                    },
+                    "type": "string"
+                },
+                "header_layout": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "fullKey": "header_layout",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7",
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "header": "tx_mask_cd65d59e47253",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "header_layout",
+                    "label": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "order": {
+                        "accordeon": 5,
+                        "gallary": 5,
+                        "header": 7,
+                        "headline": 5
+                    },
+                    "type": "select"
+                },
+                "header_position": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "headline": ""
+                    },
+                    "fullKey": "header_position",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7",
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "header_position",
+                    "label": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "headline": ""
+                    },
+                    "order": {
+                        "accordeon": 6,
+                        "gallary": 6,
+                        "headline": 6
+                    },
+                    "type": "select"
+                },
+                "subheader": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": ""
+                    },
+                    "fullKey": "subheader",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7"
+                    },
+                    "key": "subheader",
+                    "label": {
+                        "accordeon": ""
+                    },
+                    "order": {
+                        "accordeon": 3
+                    },
+                    "type": "string"
+                },
+                "tx_mask_0a96a85b8d8da": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_0a96a85b8d8da",
+                    "key": "0a96a85b8d8da",
+                    "type": "palette"
+                },
+                "tx_mask_3c5b1b47da62f": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "accordeon": ""
+                    },
+                    "fullKey": "tx_mask_3c5b1b47da62f",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7"
+                    },
+                    "key": "3c5b1b47da62f",
+                    "label": {
+                        "accordeon": ""
+                    },
+                    "order": {
+                        "accordeon": 4
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_4719eef42b221": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "accordeon": ""
+                    },
+                    "fullKey": "tx_mask_4719eef42b221",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7"
+                    },
+                    "key": "4719eef42b221",
+                    "label": {
+                        "accordeon": ""
+                    },
+                    "order": {
+                        "accordeon": 2
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_beb8344709ed7": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_beb8344709ed7",
+                    "key": "beb8344709ed7",
+                    "type": "palette"
+                },
+                "tx_mask_tx_mask_accordeon_item": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "type": "inline"
+                    },
+                    "description": {
+                        "accordeon": ""
+                    },
+                    "fullKey": "tx_mask_tx_mask_accordeon_item",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_0a96a85b8d8da"
+                    },
+                    "key": "tx_mask_accordeon_item",
+                    "label": {
+                        "accordeon": "Items"
+                    },
+                    "order": {
+                        "accordeon": 1
+                    },
+                    "type": "inline"
+                }
+            }
+        },
+        "tx_mask_tx_mask_accordeon_item": {
+            "sql": {
+                "tx_mask_accordeon_item_body": {
+                    "tx_mask_tx_mask_accordeon_item": {
+                        "tx_mask_accordeon_item_body": "mediumtext"
+                    }
+                },
+                "tx_mask_accordeon_item_image": {
+                    "tx_mask_tx_mask_accordeon_item": {
+                        "tx_mask_accordeon_item_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_accordeon_item_title": {
+                    "tx_mask_tx_mask_accordeon_item": {
+                        "tx_mask_accordeon_item_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_accordeon_item_body": {
+                    "config": {
+                        "enableRichtext": 1,
+                        "type": "text"
+                    },
+                    "fullKey": "tx_mask_accordeon_item_body",
+                    "inlineParent": "tx_mask_tx_mask_accordeon_item",
+                    "key": "accordeon_item_body",
+                    "label": "Beschreibung",
+                    "order": 2,
+                    "type": "richtext"
+                },
+                "tx_mask_accordeon_item_image": {
+                    "config": {
+                        "appearance": {
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "expandSingle": 1,
+                            "fileUploadAllowed": 0,
+                            "useSortable": 0
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "maxitems": "1",
+                        "minitems": "0",
+                        "type": "inline"
+                    },
+                    "fullKey": "tx_mask_accordeon_item_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_tx_mask_accordeon_item",
+                    "key": "accordeon_item_image",
+                    "label": "Bild",
+                    "order": 3,
+                    "type": "file"
+                },
+                "tx_mask_accordeon_item_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_accordeon_item_title",
+                    "inlineParent": "tx_mask_tx_mask_accordeon_item",
+                    "key": "accordeon_item_title",
+                    "label": "Titel",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" product-name="chanathale_environment">
+        <header/>
+        <body>
+            <trans-unit id="force_context">
+                <source>Überschreibe TYPO3-Context (unabhängig von der TYPO3_CONTEXT Environment Variable, die in der
+                    .htaccess gesetzt ist)
+                </source>
+            </trans-unit>
+            <trans-unit id="fallback_context">
+                <source>Fallback TYPO3-Context</source>
+            </trans-unit>
+
+            <trans-unit id="header_layout.1">
+                <source>Überschrift 1 (H1) (Nur einmal pro Seite verwenden)</source>
+            </trans-unit>
+            <trans-unit id="header_layout.2">
+                <source>Überschrift 2 (H2) (Standard)</source>
+            </trans-unit>
+            <trans-unit id="header_layout.3">
+                <source>Überschrift 3 (H3)</source>
+            </trans-unit>
+            <trans-unit id="header_layout.4">
+                <source>Überschrift 4 (H4)</source>
+            </trans-unit>
+            <trans-unit id="header_layout.7">
+                <source>Überschrift Footer</source>
+            </trans-unit>
+            <trans-unit id="header_layout.100">
+                <source>Überschrift auf der Webseite nicht anzeigen (nur im Backend sichtbar)</source>
+            </trans-unit>
+
+            <trans-unit id="layout.0">
+                <source>Kein</source>
+            </trans-unit>
+            <trans-unit id="layout.1">
+                <source>Schmale Breite</source>
+            </trans-unit>
+            <trans-unit id="layout.2">
+                <source>Volle Breite</source>
+            </trans-unit>
+
+            <trans-unit id="space_after_class">
+                <source>Abstand zum nächsten Inhaltselement</source>
+            </trans-unit>
+            <trans-unit id="space_after_class.small">
+                <source>Klein (Mobile: 40px, Desktop: 60px)</source>
+            </trans-unit>
+            <trans-unit id="space_after_class.medium">
+                <source>Mittel (Standard) (Mobile: 80px, Desktop: 120px)</source>
+            </trans-unit>
+            <trans-unit id="space_after_class.large">
+                <source>Groß (Mobile: 120px, Desktop: 180px)</source>
+            </trans-unit>
+            <trans-unit id="space_after_class.none">
+                <source>Kein (0px)</source>
+            </trans-unit>
+
+            <trans-unit id="space_before_class">
+                <source>Abstand zum vorherigen Inhaltselement</source>
+            </trans-unit>
+            <trans-unit id="space_before_class.small">
+                <source>Klein (Mobile: 40px, Desktop: 60px)</source>
+            </trans-unit>
+            <trans-unit id="space_before_class.medium">
+                <source>Mittel (Standard) (Mobile: 80px, Desktop: 120px)</source>
+            </trans-unit>
+            <trans-unit id="space_before_class.large">
+                <source>Groß (Mobile: 120px, Desktop: 180px)</source>
+            </trans-unit>
+            <trans-unit id="space_before_class.none">
+                <source>Kein (0px)</source>
+            </trans-unit>
+
+            <trans-unit id="nav_title">
+                <source>Alternativer Navigations- und Breadcrumbtitel</source>
+            </trans-unit>
+            <trans-unit id="nav_title.description">
+                <source>überschreibt Seitentitel</source>
+            </trans-unit>
+
+            <trans-unit id="og_image.description">
+                <source>1200 x 630 Pixel (Seitenverhältnis: 1.91:1)</source>
+            </trans-unit>
+
+            <trans-unit id="seo_title">
+                <source>Alternativer Seitentitel</source>
+            </trans-unit>
+            <trans-unit id="seo_title.description">
+                <source>überschreibt Seitentitel; auch für Suchmaschinen; Empfehlung: max. 60 Zeichen</source>
+            </trans-unit>
+
+            <trans-unit id="title">
+                <source>Seitentitel</source>
+            </trans-unit>
+            <trans-unit id="title.description">
+                <source>auch für URL-Segment; Empfehlung: max. 100 Zeichen</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

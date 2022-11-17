@@ -1,0 +1,24 @@
+.frame-type-mask_gallary {
+
+  .swiper {
+    width: 600px;
+    height: 600px;
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .swiper-coverflow {
+    width: 100%;
+    height: unset;
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 600px !important;
+      height: 600px !important;
+    }
+  }
+}

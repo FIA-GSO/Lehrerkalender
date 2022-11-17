@@ -1,0 +1,122 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:section name="PupilRow">
+    <tr data-selector="pupil-record" data-pupil-uid="{pupil.uid}">
+        <td data-property="firstname">{pupil.firstname}</td>
+        <td data-property="lastname">{pupil.lastname}</td>
+        <td data-property="classroom">{pupil.classroom.title}</td>
+        <td data-property="pupilNumber">{pupil.pupilNumber}</td>
+        <td data-property="email">{pupil.email}</td>
+        <td>
+            <div class="d-flex justify-content-end">
+                <f:link.action action="show" controller="Pupil" pluginName="PupilDetail" pageUid="26" extensionName="ChanathaleGso" arguments="{pupil: pupil}" class="btn btn-primary me-3" additionalAttributes="{data-selector: 'pupil-record'}">
+                    Anzeigen
+                </f:link.action>
+                <button data-modal="true" data-modal-id="#pupil-modal-{pupil.uid}-{data.uid}" class="btn btn-outline-secondary me-3" data-uid="{pupil.uid}" data-selector="pupil-edit" data-firstname="{pupil.firstname}" data-lastname="{pupil.lastname}" data-email="{pupil.email}" data-pupilNumber="{pupil.pupilNumber}" type="button">Bearbeiten</button>
+                <button data-ajax-delete="{f:uri.page(absolute: 1, pageUid: 7, pageType: 8006)}" class="btn btn-outline-secondary" data-uid="{pupil.uid}" data-selector="pupil-delete" type="button">Entfernen</button>
+            </div>
+        </td>
+    </tr>
+</f:section>
+
+<f:section name="PupilCard">
+    <div class="g-col-xxl-4 g-col-xl-4 g-col-lg-4 g-col-md-12 g-col-sm-12 g-col-12">
+        <f:link.action action="show" controller="Pupil" pluginName="PupilDetail" pageUid="{pageUid}" extensionName="ChanathaleGso" arguments="{pupil: pupil}" class="card classroom-card border-0 rounded-0" additionalAttributes="{data-selector: 'pupil-record'}">
+            <div class="card-body">
+                <h4 class="d-flex justify-content-start">{pupil.firstname} {pupil.lastname}</h4>
+            </div>
+        </f:link.action>
+    </div>
+</f:section>
+
+<f:section name="PupilModal">
+    <div class="modal fade" id="pupil-modal-{pupil.uid}-{data.uid}" data-selector="pupil-modal" data-form="new" tabindex="-1" aria-labelledby="pupilEditForm" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Schüler:in bearbeiten</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <f:form method="POST" class="lazy-element mt-3" enctype="multipart/form-data" objectName="pupil" name="pupil" object="{pupil}"
+                            action="save"
+                            pluginName="AjaxSaveForm"
+                            extensionName="chanathalegso"
+                            additionalAttributes="{data-selector: 'pupil-form', data-modal-id: '#pupil-modal-{pupil.uid}-{data.uid}',
+                    data-lazy-function: 'pupilform',
+                    data-ajax: '{f:uri.page(absolute: 1, pageUid: 7, pageType: 8000)}'}">
+
+                        <div class="form-floating mb-3">
+                            <f:form.select class="form-select" additionalAttributes="{data-property: 'classroom'}" id="{data.uid}-pupil-form-class" property="classroom" options="{classrooms}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie eine Klasse aus..."/>
+                            <label for="{data.uid}-pupil-form-class">Klasse</label>
+                            <div class="invalid-feedback" data-invalid="classroom">
+                            </div>
+                        </div>
+
+                        <div class="grid g-3">
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+
+                                <div class="form-floating mb-3">
+                                    <f:form.textfield property="firstname" type="input" additionalAttributes="{data-property: 'firstname'}" class="form-control" id="{data.uid}-pupil-form-firstname"/>
+                                    <label for="{data.uid}-pupil-form-firstname">Vorname *</label>
+                                    <div class="invalid-feedback" data-invalid="firstname">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+
+                                <div class="form-floating mb-3">
+                                    <f:form.textfield property="lastname" additionalAttributes="{data-property: 'lastname'}" type="input" class="form-control" id="{data.uid}-pupil-form-lastname"/>
+                                    <label for="{data.uid}-pupil-form-lastname">Nachname *</label>
+                                    <div class="invalid-feedback" data-invalid="lastname">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="grid g-3">
+
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+                                <div class="form-floating mb-3">
+                                    <f:form.textfield property="email" type="email" additionalAttributes="{data-property: 'email'}" class="form-control" id="{data.uid}-pupil-form-email"/>
+                                    <label for="{data.uid}-pupil-form-email">E-Mail *</label>
+                                    <div class="invalid-feedback" data-invalid="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+                                <div class="form-floating mb-3">
+                                    <f:form.textfield property="pupilNumber" type="input" additionalAttributes="{data-property: 'pupilNumber'}" class="form-control" id="{data.uid}-pupil-form-pupilNumber"/>
+                                    <label for="{data.uid}-pupil-form-pupilNumber">Schülernummer *</label>
+                                    <div class="invalid-feedback" data-invalid="pupilNumber">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <f:form.hidden property="pid" value="35"/>
+
+                        <div class="grid g-3">
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+                                <f:form.submit class="btn btn-primary w-100" value="Speichern"/>
+                            </div>
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+                                <button type="button" class="btn btn-secondary w-100" data-modal-cancel="true">Abbrechen</button>
+                            </div>
+                        </div>
+                    </f:form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+
+</html>

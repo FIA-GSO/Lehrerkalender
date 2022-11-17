@@ -1,0 +1,409 @@
+########################################
+# page
+########################################
+page = PAGE
+page {
+    10 = FLUIDTEMPLATE
+    10 {
+        layoutRootPaths {
+            100 = EXT:chanathale_customer/Resources/Private/Layouts/Page/
+        }
+
+        partialRootPaths {
+            100 = EXT:chanathale_customer/Resources/Private/Partials/Page/
+            200 = EXT:chanathale_customer/Resources/Private/Partials/Ext/FluidStyledContent/
+        }
+
+        dataProcessing {
+            10 = Chanathale\ChanathaleBase\DataProcessing\ConstantsProcessor
+            10 {
+                key = ce
+                as = constants
+            }
+
+            20 = Chanathale\ChanathaleBase\DataProcessing\ConstantsProcessor
+            20 {
+                key = page
+                as = constants
+            }
+
+            30 = Chanathale\ChanathaleBase\DataProcessing\ConstantsProcessor
+            30 {
+                key = path
+                as = constants
+            }
+
+            35 = Chanathale\ChanathaleBase\DataProcessing\ConstantsProcessor
+            35 {
+                key = pageType
+                as = constants
+            }
+
+            40 = Chanathale\ChanathaleBase\DataProcessing\SiteLanguageProcessor
+            40 {
+                as = siteLanguage
+            }
+
+            50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            50 {
+                levels = 3
+                as = menuMain
+                expandAll = 1
+                titleField = nav_title // title
+            }
+
+            60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            60 {
+                special = rootline
+                special.range = 0|-1
+                includeNotInMenu = 1
+                as = menuBreadcrumb
+                titleField = seo_title // nav_title // title
+            }
+
+            80 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+            80 {
+                as = site
+            }
+
+            90 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            90 {
+                special = directory
+                special.value = {$ce.uids.subfooterDirectory}
+                levels = 1
+                as = subfooter
+            }
+
+            // Custom DataProcessor
+            1000 = Chanathale\ChanathaleCustomer\DataProcessing\SocialProcessor
+            1000 {
+                as = socialIcon
+            }
+
+            2000 = Chanathale\ChanathaleGso\DataProcessing\AddClassroomTitleToMenuProcessor
+            2000.menus = menuBreadcrumb
+
+            2050 = Chanathale\ChanathaleGso\DataProcessing\PupilHeaderDataProcessor
+            2050.pupilRecord = pupilDetail
+
+            2100 = Chanathale\ChanathaleGso\DataProcessing\ClassroomHeaderDataProcessor
+            2100.classroomRecord = classroomDetail
+        }
+
+        file {
+            cObject = CASE
+            cObject {
+                key {
+                    field = backend_layout
+                    ifEmpty {
+                        data = levelfield:-2,backend_layout_next_level,slide
+                    }
+                }
+
+                default = TEXT
+                default {
+                    value = EXT:chanathale_customer/Resources/Private/Templates/Page/Default.html
+                }
+
+                pagets__classroomdetail = TEXT
+                pagets__classroomdetail {
+                    value = EXT:chanathale_customer/Resources/Private/Templates/Page/Classroom.html
+                }
+
+                pagets__pupildetail = TEXT
+                pagets__pupildetail {
+                    value = EXT:chanathale_customer/Resources/Private/Templates/Page/Pupil.html
+                }
+            }
+
+
+        }
+
+        variables {
+            header < styles.content.get
+            header {
+                select {
+                    where = colPos = 0
+                }
+            }
+
+            content < styles.content.get
+            content {
+                select {
+                    where = colPos = 1
+                }
+            }
+        }
+
+
+    }
+
+    meta {
+        msapplication-config = {$page.meta.msapplication_config}
+        msapplication-TileColor = {$page.meta.msapplication_tile_color}
+        theme-color = {$page.meta.theme_color}
+        viewport = width=device-width, initial-scale=1.0
+
+        # og:site_name
+        # get value from seo_title field of root page => if empty => get value from title field of root page
+        og:site_name = TEXT
+        og:site_name.data = levelfield : 0 , seo_title // leveltitle : 0
+
+        og:type = website
+
+        og:url = TEXT
+        og:url.typolink {
+            parameter.data = tsfe:id
+            returnLast = url
+            forceAbsoluteUrl = 1
+        }
+
+        og:title = TEXT
+        og:title.data = page:og_title // page:seo_title // page:title
+
+        og:description = TEXT
+        og:description.data = page:og_description // page:description
+
+        twitter:site = {$page.meta.twitter_site}
+
+        twitter:card = summary
+
+        twitter:title = TEXT
+        twitter:title < page.meta.og:title
+
+        twitter:description = TEXT
+        twitter:description < page.meta.og:description
+    }
+
+    typeNum = 0
+
+    headerData {
+        1000 = TEXT
+        1000.value = <link rel="stylesheet" href="/assets/css/css.main.min.css" media="all">
+    }
+
+    footerData {
+        1000 = TEXT
+        1000.value = <script type="module" src="/assets/js/js.main.min.js"></script>
+    }
+}
+
+ajaxSavePupilForm = PAGE
+ajaxSavePupilForm {
+    typeNum = 8000
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxSaveForm
+        controller = Pupil
+    }
+}
+
+ajaxSaveClassroomForm = PAGE
+ajaxSaveClassroomForm {
+    typeNum = 8001
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    20 = USER
+    20 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxSaveClassroomForm
+        controller = Classroom
+    }
+}
+
+ajaxSaveGradeForm = PAGE
+ajaxSaveGradeForm {
+    typeNum = 8002
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    30 = USER
+    30 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxSaveGradeForm
+        controller = Performance
+    }
+}
+
+ajaxFilterPerformance = PAGE
+ajaxFilterPerformance {
+    typeNum = 8003
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    40 = USER
+    40 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxFilterPerformance
+        controller = Performance
+    }
+}
+
+ajaxSaveEvent = PAGE
+ajaxSaveEvent {
+    typeNum = 8004
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    50 = USER
+    50 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxSaveEvent
+        controller = Calendar
+    }
+}
+
+ajaxSaveMeeting = PAGE
+ajaxSaveMeeting {
+    typeNum = 8005
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    60 = USER
+    60 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxSaveMeeting
+        controller = Calendar
+    }
+}
+
+ajaxDeletePupil = PAGE
+ajaxDeletePupil {
+    typeNum = 8006
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    70 = USER
+    70 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxDeletePupil
+        controller = Pupil
+    }
+}
+
+ajaxDeleteMeeting = PAGE
+ajaxDeleteMeeting {
+    typeNum = 8007
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    80 = USER
+    80 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxDeleteMeeting
+        controller = Meeting
+    }
+}
+
+ajaxDeleteEvent = PAGE
+ajaxDeleteEvent {
+    typeNum = 8008
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    90 = USER
+    90 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxDeleteEvent
+        controller = Calendar
+    }
+}
+
+ajaxDeletePerformance = PAGE
+ajaxDeletePerformance {
+    typeNum = 8009
+
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type: application/json
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+
+    100 = USER
+    100 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        vendorName = Chanathale
+        extensionName = ChanathaleGso
+        pluginName = AjaxDeletePerformance
+        controller = Performance
+    }
+}

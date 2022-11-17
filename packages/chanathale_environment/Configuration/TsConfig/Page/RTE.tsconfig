@@ -1,0 +1,5 @@
+RTE {
+    default {
+        preset = chanathale_environment
+    }
+}

@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<body class="background-color-fair-2">
+<f:render partial="Navbar" arguments="{_all}"/>
+
+<main>
+    <!--TYPO3SEARCH_begin-->
+    <f:render partial="Pupil/PupilHeader" section="Header" arguments="{_all}"/>
+    {header -> f:format.raw()}
+
+    <f:render partial="Breadcrumb" arguments="{_all}"/>
+
+    {content -> f:format.raw()}
+
+    <!--TYPO3SEARCH_end-->
+</main>
+
+<f:render partial="Footer" arguments="{_all}"/>
+
+</body>
+
+</html>

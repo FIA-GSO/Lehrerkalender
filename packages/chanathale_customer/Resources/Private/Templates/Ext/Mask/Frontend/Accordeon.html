@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div class="container-xxl container-xl container-lg">
+    <div class="accordion accordion-flush" id="accordion-{data.uid}">
+        <f:for each="{data.tx_mask_tx_mask_accordeon_item}" as="item" iteration="iterator">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading-{iterator.index}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-{iterator.index}" aria-expanded="false" aria-controls="flush-collapse-{iterator.index}">
+                        {item.tx_mask_accordeon_item_title}
+                    </button>
+                </h2>
+                <div id="flush-collapse-{iterator.index}" class="accordion-collapse collapse" aria-labelledby="flush-heading-{iterator.index}" data-bs-parent="#accordion-{data.uid}">
+                    <div class="accordion-body">
+                        {item.tx_mask_accordeon_item_body -> f:format.html()}
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,6 @@
+ce {
+    uids {
+        subfooterDirectory = 5
+        ajaxPageUid = 7
+    }
+}

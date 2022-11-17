@@ -1,0 +1,34 @@
+path {
+    assets {
+        root = /assets
+
+        css = /assets/css
+        fonts = /assets/fonts
+        images = /assets/images
+        js = /assets/js
+
+        resources {
+            logo {
+                default = /assets/images/logo/logo.svg
+                light = /assets/images/logo/logo-light.svg
+                social = /assets/images/logo/logo-1200x630.png
+            }
+        }
+    }
+
+    meta {
+        msapplication_config = none
+
+        # §§§THEME_COLOR_HEX§§§
+        msapplication_tile_color = #003461
+
+        # §§§THEME_COLOR_HEX§§§
+        theme_color = #003461
+
+        # §§§TWITTER_HANDLE§§§
+        twitter_site =
+
+        og_image_width = 1200
+        og_image_height = 630
+    }
+}

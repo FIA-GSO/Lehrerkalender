@@ -1,0 +1,22 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+    <f:if condition="{headerLayout} == 1">
+        <h1 class="{style}">{text}</h1>
+    </f:if>
+    <f:if condition="{headerLayout} == 2">
+        <h2 class="{style}">{text}</h2>
+    </f:if>
+    <f:if condition="{headerLayout} == 3">
+        <h3 class="{style}">{text}</h3>
+    </f:if>
+    <f:if condition="{headerLayout} == 4">
+        <h4 class="{style}">{text}</h4>
+    </f:if>
+    <f:if condition="{headerLayout} == 5">
+        <h5 class="{style}">{text}</h5>
+    </f:if>
+
+</html>

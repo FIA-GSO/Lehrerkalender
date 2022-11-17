@@ -1,0 +1,66 @@
+[backend.user.isAdmin]
+    options {
+        clearCache {
+            system = 1
+        }
+
+        file_list {
+            enableClipBoard = selectable
+            enableDisplayBigControlPanel = activated
+            enableDisplayThumbnails = activated
+        }
+
+        pageTree {
+            showDomainNameWithTitle = 1
+            showNavTitle = 1
+            showPageIdWithTitle = 1
+        }
+    }
+
+    admPanel {
+        enable = 1
+        enable {
+            all = 1
+        }
+    }
+[end]
+
+[like(","~backend.user.userGroupList~",", "*,1,*")]
+    options {
+        clearCache {
+            pages = 1
+        }
+
+        file_list {
+            enableClipBoard = selectable
+            enableDisplayBigControlPanel = activated
+            enableDisplayThumbnails = activated
+        }
+
+        pageTree {
+            showDomainNameWithTitle = 1
+            showNavTitle = 1
+            showPageIdWithTitle = 1
+        }
+    }
+[end]
+
+# disable direct upload
+# file upload should always be via file list
+setup {
+    default {
+        edit_docModuleUpload = 0
+    }
+
+    override {
+        edit_docModuleUpload = 0
+    }
+}
+
+# show only empty preset dashboard
+# https://docs.typo3.org/c/typo3/cms-dashboard/master/en-us/Configuration/WidgetPresets.html
+options {
+    dashboard {
+        dashboardPresetsForNewUsers = default
+    }
+}

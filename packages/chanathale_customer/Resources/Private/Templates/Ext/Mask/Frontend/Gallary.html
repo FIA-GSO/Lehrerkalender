@@ -1,0 +1,40 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:layout name="Ext/FluidStyledContent/Default"/>
+
+<f:section name="Main">
+    <f:if condition="{data.tx_mask_gallary_items}">
+        <div class="lazy-element p-5" data-selector="mask-gallery" data-effect="{data.tx_mask_gallary_slider_effect}"
+             data-lazy-function="gallery">
+
+            <div class="swiper" data-selector="swiper-element">
+                <div class="swiper-wrapper">
+                    <f:for each="{data.tx_mask_gallary_items}" as="data_item">
+                        <div class="swiper-slide bg-white">
+                            <div>
+                                <f:if condition="{data_item.tx_mask_gallary_items_image.0}">
+                                    <f:image image="{data_item.tx_mask_gallary_items_image.0}" class="d-block w-100" width="600" height="400" />
+                                    {data_item.tx_mask_gallary_items_image.0.description}
+                                </f:if>
+                                <div class="ps-5 pe-5 pt-3">
+                                    <h3>{data_item.tx_mask_gallary_items_title}</h3>
+                                    <p>
+                                        {data_item.tx_mask_gallary_items_description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </f:if>
+
+</f:section>
+
+</html>

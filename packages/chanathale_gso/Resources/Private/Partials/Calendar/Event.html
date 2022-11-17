@@ -1,0 +1,96 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+
+    <f:section name="EventModal">
+        <div class="modal fade" data-delete-ajax-url="{f:uri.page(absolute: 1, pageUid: 7, pageType: 8008)}" id="event-modal-{event.id}" data-selector="event-edit-modal" tabindex="-1" aria-labelledby="eventForm" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Termin bearbeiten</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <f:form method="POST" class="mt-3" enctype="multipart/form-data" objectName="event" name="event" object="{event}"
+                                action="saveEvent"
+                                controller="Calendar"
+                                pluginName="AjaxSaveEvent"
+                                extensionName="ChanathaleGso"
+                                additionalAttributes="{
+                        data-selector: 'event-form',
+                        data-ajax: '{f:uri.page(absolute: 1, pageUid: 7, pageType: 8004)}'
+                        }">
+
+                            <div class="form-floating mb-3">
+                                <f:form.select class="form-select" id="{event.id}-subject-form-class" property="subject" options="{subjects}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie das Schulfach aus..."/>
+                                <label for="{event.id}-subject-form-class">Schulfach *</label>
+                            </div>
+
+                            <label class="form-label" for="{event.id}-classroom-form-class">Klasse *</label>
+                            <div class="input-group mb-3">
+                                <f:form.select additionalAttributes="{data-selector: 'class-select', data-json-key: event.id}" class="form-select" id="{event.id}-classroom-form-class" property="classroom" options="{classrooms}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie die Klasse aus..."/>
+                                <button data-bs-toggle="modal" data-bs-target="#classlist-modal-{event.classroom.uid}" data-selector="show-classlist" class="btn btn-outline-primary" type="button" title="Klassenliste anzeigen">
+                                    <i class="bi-list"></i></button>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <f:form.select class="form-select" id="{event.id}-room-form-class" property="room" options="{rooms}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie ein Schulraum aus..."/>
+                                <label for="{event.id}-room-form-class">Raum *</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input data-selector="form-element-datepicker" type="input" class="form-control" id="{event.id}-date-form-class" value="{event.start -> f:format.date(format: 'd.m.Y')}"/>
+                                <label for="{event.id}-date-form-class">Datum *</label>
+                                <f:form.hidden additionalAttributes="{data-selector: 'form-element-date'}" property="date" value="{event.dateTime}"/>
+                            </div>
+
+                            <div class="grid g-3">
+                                <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+                                    <div class="form-floating mb-3">
+                                        <f:form.select class="form-select" id="{event.id}-start-form-class" property="start" options="{settings.startingtime}" optionValueField="key" optionLabelField="value" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie die Startzeit aus..."/>
+                                        <label for="{event.id}-start-form-class">Startzeit *</label>
+                                    </div>
+                                </div>
+                                <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-6 g-col-md-12 g-col-sm-12 g-col-12">
+                                    <div class="form-floating mb-3">
+                                        <f:form.select class="form-select" id="{event.id}-duration-form-class" property="end" options="{settings.duration}" optionValueField="key" optionLabelField="value" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie die Startzeit aus..."/>
+                                        <label for="{event.id}-duration-form-class">Dauer in Minuten *</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" mb-3">
+                                <label class="form-label" for="{event.id}-event-form-comment">Unterrichtsinhalt</label>
+                                <f:form.textarea property="content" rows="7" class="form-control" id="{event.id}-event-form-comment"/>
+                            </div>
+
+                            <f:form.hidden property="id"/>
+
+                            <p class="d-flex justify-content-end">* Pflichtangabe</p>
+
+                            <div class="grid g-3">
+                                <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-12 g-col-md-12 g-col-sm-12 g-col-12">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Abbrechen</button>
+                                </div>
+                                <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-12 g-col-md-12 g-col-sm-12 g-col-12">
+                                    <f:form.submit class="btn btn-primary w-100" additionalAttributes="{data-bs-dismiss: 'modal'}" value="Speichern"/>
+                                </div>
+                            </div>
+
+                            <p class="mt-3 d-flex justify-content-end">
+                                <button class="btn btn-outline-danger" data-selector="event-delete" data-json-key="{event.id}">
+                                    <i class="bi bi-trash"></i> Löschen
+                                </button>
+                            </p>
+                        </f:form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:section>
+
+</html>

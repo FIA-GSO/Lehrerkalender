@@ -1,0 +1,5 @@
+# cat=basic; type=string; label=LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:force_context
+forceContext =
+
+# cat=basic; type=string; label=LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:fallback_context
+fallbackContext =

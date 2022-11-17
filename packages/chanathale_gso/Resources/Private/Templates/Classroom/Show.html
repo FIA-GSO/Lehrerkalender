@@ -1,0 +1,20 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{classroom}">
+
+    <f:variable name="index" value="0"/>
+    <div class="container-xxl container-xl container-lg container-md">
+        <h2>Klassenliste</h2>
+        <div class="grid g-3">
+            <f:for each="{classroom.pupils}" as="pupil">
+                <f:render partial="Pupil/Pupil" section="PupilCard" arguments="{pupil: pupil, pageUid: 26}"/>
+                <f:variable name="index" value="{index+1}"/>
+            </f:for>
+        </div>
+    </div>
+</f:if>
+
+</html>

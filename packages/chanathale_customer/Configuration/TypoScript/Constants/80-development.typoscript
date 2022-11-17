@@ -1,0 +1,18 @@
+[applicationContext == "Development"]
+    config {
+        debug = 1
+
+        admPanel = 1
+        admPanel = 1
+
+        contentObjectExceptionHandler = 0
+
+        compressCss = 0
+        compressJs = 0
+
+        concatenateCss = 0
+        concatenateJs = 0
+
+        no_cache = 1
+    }
+[end]

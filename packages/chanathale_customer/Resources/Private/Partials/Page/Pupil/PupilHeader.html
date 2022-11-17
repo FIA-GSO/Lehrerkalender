@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+
+<f:section name="Header">
+
+    <f:if condition="{pupil}">
+        <div class="container mb-5">
+            <div class="row g-3 featurette">
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                    <h1 class="featurette-heading fw-normal lh-1 display-1">{pupil.firstname} {pupil.lastname}</h1>
+                    <p class="lead">Schülernummer: {pupil.pupilNumber}</p>
+
+                    <f:if condition="{pupil.classroom}">
+                        <p class="lead">Klasse: {pupil.classroom.title}</p>
+                    </f:if>
+
+                    <f:if condition="{pupil.email}">
+                        <p class="lead">E-Mail: {pupil.email}</p>
+                    </f:if>
+                </div>
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 profile-image-container">
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+</f:section>
+
+</html>

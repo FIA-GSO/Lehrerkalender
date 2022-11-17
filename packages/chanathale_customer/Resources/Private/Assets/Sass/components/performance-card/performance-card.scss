@@ -1,0 +1,30 @@
+@import "../customer/customer.scss";
+
+div.performance-card {
+  transition: all .25s ease;
+  background-color: rgb(248, 249, 250);
+
+  strong {
+    color: $primary--color-2;
+  }
+}
+
+div.performance-card:focus {
+  color: rgb(248, 249, 250);
+  background-color: $secondary--color;
+  transition: all .25s ease;
+
+  strong {
+    color: rgb(248, 249, 250);
+  }
+}
+
+div.performance-card:hover {
+  color: rgb(248, 249, 250);
+  background-color: $secondary--color;
+  transition: all .25s ease;
+
+  strong {
+    color: rgb(248, 249, 250);
+  }
+}

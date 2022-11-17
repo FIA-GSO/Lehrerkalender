@@ -1,0 +1,16 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{grades}">
+    <f:then>
+        <f:render partial="Performance/List" section="List" arguments="{performances: grades, gradeTypes: gradeTypes, search: performanceSearch, allGradeTypes: allGradeTypes, allSubjects: allSubjects, hasPerformances: hasPerformances}"/>
+    </f:then>
+    <f:else>
+        <div class="container-xxl container-xl container-lg">
+            <p class="d-flex justify-content-center">Es wurde keine Leistungen oder Bemerkungen mit diesem Filterkriterien gefunden.</p>
+        </div>
+    </f:else>
+</f:if>
+</html>

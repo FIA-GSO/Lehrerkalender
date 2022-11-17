@@ -1,0 +1,104 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<header id="header" class="mb-5">
+    <nav class="navbar bg-light p-3" aria-label="Light offcanvas navbar">
+        <div class="d-xxl-flex d-xl-flex d-lg-flex d-md-none d-sm-none d-xs-none">
+            <a class="navbar-brand ms-3" href="/">Lehrerkalender</a>
+            <div class="d-flex">
+                <f:for each="{menuMain}" as="item">
+                    <f:if condition="{item.children}">
+                        <f:then>
+
+                            <div class="nav-item me-3">
+                                <f:link.page pageUid="{item.data.uid}" class="nav-link p-2"
+                                        title="{item.title}"
+                                        additionalAttributes="{data-bs-toggle: 'dropdown', aria-expanded: 'false', role: 'button', data-selector: 'dropdown-parent'}">
+                                    <span>{item.title}</span>
+                                </f:link.page>
+                            </div>
+
+                        </f:then>
+                        <f:else>
+
+                            <div class="nav-item me-3">
+                                <f:link.page pageUid="{item.data.uid}" class="nav-link p-2"
+                                        title="{item.title}">
+                                    {item.title}
+                                </f:link.page>
+                            </div>
+
+                        </f:else>
+                    </f:if>
+
+                </f:for>
+            </div>
+        </div>
+        <div class="d-xxl-flex d-xl-flex d-lg-flex d-md-none d-sm-none d-xs-none d-none">
+            <div class="nav-link p-2">
+                <f:link.page class="nav-link" pageUid="31" additionalParams="{logintype:'logout'}">
+                    <span class="me-1">Abmelden</span><i class="fa-solid fa-right-from-bracket"></i>
+                </f:link.page>
+            </div>
+        </div>
+        <div class="d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-xs-block container-fluid justify-content-start">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start w-100" tabindex="-1" id="offcanvasNavbarLight"
+                    aria-labelledby="offcanvasNavbarLightLabel">
+                <div class="offcanvas-header">
+                    <a href="/" class="navbar-brand ms-3" id="offcanvasNavbarLightLabel">Lehrerkalender</a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex justify-content-center">
+                    <ul class="navbar-nav justify-end-center pe-3">
+                        <f:for each="{menuMain}" as="item">
+                            <f:if condition="{item.children}">
+                                <f:then>
+
+                                    <li class="nav-item dropdown">
+                                        <f:link.page pageUid="{item.data.uid}" class="nav-link dropdown-toggle fs-1"
+                                                     title="{item.title}"
+                                                     additionalAttributes="{data-bs-toggle: 'dropdown', aria-expanded: 'false', role: 'button', data-selector: 'dropdown-parent'}">
+                                            <span>{item.title}</span>
+                                        </f:link.page>
+                                        <ul class="dropdown-menu border-0">
+                                            <f:for each="{item.children}" as="children">
+                                                <f:link.page pageUid="{children.data.uid}" class="dropdown-item fs-2"
+                                                             title="{children.title}">
+                                                    {children.title}
+                                                </f:link.page>
+                                            </f:for>
+                                        </ul>
+                                    </li>
+
+                                </f:then>
+                                <f:else>
+
+                                    <li class="nav-item">
+                                        <f:link.page pageUid="{item.data.uid}" class="nav-link fs-1"
+                                                title="{item.title}">
+                                            {item.title}
+                                        </f:link.page>
+                                    </li>
+
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                        <li class="nav-item">
+                            <f:link.page pageUid="31" class="nav-link fs-1" additionalParams="{logintype:'logout'}" title="Abmelden">
+                                <span class="me-1">Abmelden</span><i class="fa-solid fa-right-from-bracket"></i>
+                            </f:link.page>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+</html>

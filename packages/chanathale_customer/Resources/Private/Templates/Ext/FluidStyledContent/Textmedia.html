@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Ext/FluidStyledContent/Default"/>
+<f:section name="Header">
+
+    <f:if condition="{gallery.position.noWrap} != 1">
+        <f:render partial="Ext/FluidStyledContent/Header/All" arguments="{_all}"/>
+    </f:if>
+
+</f:section>
+<f:section name="Main">
+    <f:if condition="{data.bodytext} || {buttons} || {gallery.rows}">
+
+        <div class="ce-textpic ce-{gallery.position.horizontal} ce-{gallery.position.vertical}{f:if(condition: gallery.position.noWrap, then: ' ce-nowrap')}">
+            <f:if condition="{gallery.position.vertical} != 'below'">
+                <f:render partial="Ext/FluidStyledContent/Media/Gallery" arguments="{_all}" />
+            </f:if>
+
+            <f:variable name="addContainerS" value="1" />
+
+            <f:if condition="{gallery.position.horizontal} == 'left' || {gallery.position.horizontal} == right">
+                <f:variable name="addContainerS" value="0" />
+            </f:if>
+
+            <f:if condition="{data.bodytext} || {buttons}">
+                <f:then>
+                    <div class="ce-bodytext{f:if(condition: addContainerS, then: ' ce-bodytext-small')}">
+                        <div class="ce-bodytext-wrapper">
+
+                            <f:if condition="{data.bodytext}">
+                                <f:format.html>{data.bodytext}</f:format.html>
+                            </f:if>
+
+                        </div>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{gallery.position.noWrap}">
+                        <f:if condition="{data.header}">
+                            <div class="ce-bodytext">
+                                <f:render partial="Header/All" arguments="{_all}" />
+                            </div>
+                        </f:if>
+                    </f:if>
+                </f:else>
+            </f:if>
+
+            <f:if condition="{gallery.position.vertical} == 'below'">
+                <f:render partial="Ext/FluidStyledContent/Media/Gallery" arguments="{_all}" />
+            </f:if>
+        </div>
+    </f:if>
+</f:section>
+</html>

@@ -1,0 +1,24 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+    <f:if condition="{classrooms}">
+        <f:variable name="index" value="0" />
+        <div class="container-xxl container-xl container-lg container-md">
+            <div class="grid g-3" data-selector="classlist-container">
+                <f:if condition="{classrooms}">
+                    <f:then>
+                        <f:for each="{classrooms}" as="classroom">
+                            <f:render partial="Classroom/Classroom" section="ClassroomCard" arguments="{classroom: classroom}"/>
+                            <f:variable name="index" value="{index+1}"/>
+                        </f:for>
+                    </f:then>
+                    <f:else>
+                        <p class="d-flex justify-content-center">Sie sind in keiner Klasse zugewiesen.</p>
+                    </f:else>
+                </f:if>
+            </div>
+        </div>
+    </f:if>
+</html>

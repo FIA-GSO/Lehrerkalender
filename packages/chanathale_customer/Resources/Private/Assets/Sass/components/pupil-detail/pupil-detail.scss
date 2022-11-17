@@ -1,0 +1,39 @@
+.profile-image {
+  width: 500px;
+  height: 500px;
+
+  @media only screen and (max-width: 768px) {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+.profile-image-container {
+  @media only screen and (max-width: 992px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.lead {
+
+  @media only screen and (max-width: 992px) {
+    text-align: center;
+  }
+}
+
+.featurette {
+
+  @media only screen and (max-width: 992px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.featurette-heading {
+  @media only screen and (max-width: 992px) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}

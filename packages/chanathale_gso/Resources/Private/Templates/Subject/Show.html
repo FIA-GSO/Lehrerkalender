@@ -1,0 +1,34 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{classrooms}">
+    <div class="container-xxl container-xl container-lg container-md">
+
+        <h3>
+            Klassen mit {subject.title}
+        </h3>
+        <f:variable name="index" value="0"/>
+
+        <f:for each="{classrooms}" as="classroom">
+
+            <f:if condition="{index} == 0">
+                <div class="grid g-3 mt-1">
+            </f:if>
+
+            <f:render partial="Classroom/Classroom" section="ClassroomCard" arguments="{classroom: classroom}"/>
+            <f:variable name="index" value="{index+1}"/>
+
+            <f:if condition="{index} == 3">
+    </div>
+    <f:variable name="index" value="0"/>
+</f:if>
+
+</f:for>
+
+</div>
+
+</f:if>
+
+</html>

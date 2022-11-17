@@ -1,0 +1,22 @@
+<html data-namespace-typo3-fluid="true" lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+
+<f:if condition="{isLoggedIn}">
+    <div class="mb-5">
+        <div class="container-xxl container-xl container-lg container-md">
+            <f:if condition="{feUserData.first_name}">
+                <f:then>
+                    <h1 class="display-1">Willkommen {feUserData.first_name},</h1>
+                </f:then>
+                <f:else>
+                    <h1 class="display-1">Willkommen {feUserData.username},</h1>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</f:if>
+
+</html>

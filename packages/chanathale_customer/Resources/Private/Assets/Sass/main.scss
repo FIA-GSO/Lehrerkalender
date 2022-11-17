@@ -1,0 +1,71 @@
+@import "~bootstrap/scss/functions.scss";
+@import "~bootstrap/scss/variables.scss";
+@import "components/typo3/variables.scss";
+@import "~bootstrap/scss/maps.scss";
+@import "~bootstrap/scss/mixins.scss";
+@import "~bootstrap/scss/utilities.scss";
+@import "~bootstrap/scss/root.scss";
+@import "~bootstrap/scss/reboot.scss";
+@import "~bootstrap/scss/type.scss";
+@import "~bootstrap/scss/images.scss";
+@import "~bootstrap/scss/containers.scss";
+@import "~bootstrap/scss/grid.scss";
+@import "~bootstrap/scss/tables.scss";
+@import "~bootstrap/scss/buttons.scss";
+@import "~bootstrap/scss/transitions.scss";
+@import "~bootstrap/scss/dropdown.scss";
+@import "~bootstrap/scss/button-group.scss";
+@import "~bootstrap/scss/nav.scss";
+@import "~bootstrap/scss/navbar.scss";
+@import "~bootstrap/scss/card.scss";
+@import "~bootstrap/scss/accordion.scss";
+@import "~bootstrap/scss/breadcrumb.scss";
+@import "~bootstrap/scss/bootstrap-utilities.scss";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~bootstrap/scss/bootstrap-reboot.scss";
+@import "~bootstrap/scss/offcanvas.scss";
+@import "~bootstrap/scss/forms.scss";
+@import "~bootstrap/scss/mixins/backdrop.scss";
+@import "~bootstrap/scss/modal.scss";
+@import "~bootstrap/scss/close.scss";
+@import "~bootstrap/scss/toasts.scss";
+@import "~bootstrap/scss/accordion.scss";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@import "~@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "~@fortawesome/fontawesome-free/css/brands.css";
+@import "~@fortawesome/fontawesome-free/css/solid.css";
+
+// Swiper
+@import "swiper/scss";
+@import "swiper/scss/effect-cards";
+@import "swiper/scss/effect-coverflow";
+@import "swiper/scss/effect-cube";
+@import "swiper/scss/effect-fade";
+@import "swiper/scss/pagination";
+
+// TYPO3
+
+// FullCalendar
+@import "@fullcalendar/common/main.min.css";
+@import "~@fullcalendar/timegrid/main.min.css";
+@import "@fullcalendar/bootstrap5/main.min.css";
+
+// Datepicker
+@import '~js-datepicker/dist/datepicker.min.css';
+
+// Custom Swiper
+@import "components/gallery/gallery.scss";
+
+// MenuSubpages
+@import "~bootstrap/scss/list-group";
+
+// Custom Components
+@import "components/text-media/text-media.scss";
+@import "components/felogin/felogin.scss";
+@import "components/loader/loader.scss";
+@import "components/customer/customer.scss";
+@import "components/classroom-list/classroom-list.scss";
+@import "components/performance-card/performance-card.scss";
+@import "components/pupil-detail/pupil-detail.scss";
+@import "components/teachercalendar/teachercalendar.scss";

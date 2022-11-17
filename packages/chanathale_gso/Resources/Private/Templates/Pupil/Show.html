@@ -1,0 +1,212 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div class="container--xxl container-xl container-lg container-md">
+
+    <div class="modal fade" id="gradeForm" data-selector="grade-form-modal" tabindex="-1" aria-labelledby="gradeForm" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Leistung hinzufügen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <f:form method="POST" class="mt-3" enctype="multipart/form-data" objectName="performance" name="performance" object="{performance}"
+                            action="save"
+                            controller="Performance"
+                            pluginName="AjaxSaveGradeForm"
+                            extensionName="ChanathaleGso"
+                            additionalAttributes="{
+                        data-selector: 'grade-form',
+                        data-ajax: '{f:uri.page(absolute: 1, pageUid: 7, pageType: 8002)}'
+                        }">
+
+                        <div class="form-floating mb-3">
+                            <f:form.select additionalAttributes="{data-property: 'gradeType'}" class="form-select" id="{data.uid}-grade-type-form-class" property="gradeType" options="{gradeTypes}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie eine Leistungsart aus..."/>
+                            <label for="{data.uid}-grade-type-form-class">Leistungsart *</label>
+                            <div class="invalid-feedback" data-invalid="gradeType">
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <f:form.select additionalAttributes="{data-property: 'subject'}" class="form-select" id="{data.uid}-subject-form-class" property="subject" options="{subjects}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie das Schulfach aus..."/>
+                            <label for="{data.uid}-subject-form-class">Schulfach *</label>
+                            <div class="invalid-feedback" data-invalid="subject">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-floating mb-3">
+                                    <input data-property="createDate" data-selector="form-element-datepicker" type="input" class="form-control" id="{data.uid}-grade-form-date"/>
+                                    <label for="{data.uid}-grade-form-date">Datum *</label>
+                                    <f:form.hidden additionalAttributes="{data-selector: 'form-element-createDate'}" property="createDate"/>
+                                    <div class="invalid-feedback" data-invalid="createDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-floating mb-3">
+                                    <f:form.select class="form-select" id="{data.uid}-grade-form-class" property="grade" options="{settings.pupildetail.grade}" optionValueField="key" optionLabelField="value" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie eine Schulnote aus..."/>
+                                    <label for="{data.uid}-grade-form-class">Schulnote</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" mb-3">
+                            <label class="form-label" for="{data.uid}-grade-form-comment">Bemerkungen</label>
+                            <f:form.textarea property="comment" rows="7" class="form-control" id="{data.uid}-grade-form-comment"/>
+                        </div>
+
+                        <f:form.hidden property="pupil"/>
+
+                        <p class="d-flex justify-content-end">* Pflichtangabe</p>
+
+                        <div class="grid g-3">
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-12 g-col-md-12 g-col-sm-12 g-col-12">
+                                <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Abbrechen</button>
+                            </div>
+                            <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-12 g-col-md-12 g-col-sm-12 g-col-12">
+                                <f:form.submit class="btn btn-primary w-100" value="Speichern"/>
+                            </div>
+                        </div>
+                    </f:form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <f:if condition="{commentPerformance.gradeType}">
+        <div class="modal fade" id="commentForm" data-selector="grade-form-modal" tabindex="-1" aria-labelledby="commentForm" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Bemerkungen hinzufügen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <f:form method="POST" class="mt-3" enctype="multipart/form-data" objectName="performance" name="performance" object="{commentPerformance}"
+                                action="save"
+                                controller="Performance"
+                                pluginName="AjaxSaveGradeForm"
+                                extensionName="ChanathaleGso"
+                                additionalAttributes="{
+                        data-selector: 'grade-form',
+                        data-ajax: '{f:uri.page(absolute: 1, pageUid: 7, pageType: 8002)}'
+                        }">
+
+                            <f:form.hidden property="gradeType"/>
+
+                            <div class="form-floating mb-3">
+                                <f:form.select additionalAttributes="{data-property: 'subject'}" class="form-select" id="{data.uid}-subject-form-class" property="subject" options="{subjects}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Bitte wählen Sie das Schulfach aus..."/>
+                                <label for="{data.uid}-subject-form-class">Schulfach *</label>
+                                <div class="invalid-feedback" data-invalid="subject">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-floating mb-3">
+                                        <input data-property="createDate" data-selector="form-element-datepicker" type="input" class="form-control" id="{data.uid}-grade-form-date"/>
+                                        <label for="{data.uid}-grade-form-date">Datum *</label>
+                                        <f:form.hidden additionalAttributes="{data-selector: 'form-element-createDate'}" property="createDate"/>
+                                        <div class="invalid-feedback" data-invalid="createDate">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" mb-3">
+                                <label class="form-label" for="{data.uid}-grade-form-comment">Bemerkungen</label>
+                                <f:form.textarea property="comment" rows="7" class="form-control" id="{data.uid}-grade-form-comment"/>
+                            </div>
+
+                            <f:form.hidden property="pupil"/>
+
+                            <p class="d-flex justify-content-end">* Pflichtangabe</p>
+
+                            <div class="grid g-3">
+                                <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-12 g-col-md-12 g-col-sm-12 g-col-12">
+                                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Abbrechen</button>
+                                </div>
+                                <div class="g-col-xxl-6 g-col-xl-6 g-col-lg-12 g-col-md-12 g-col-sm-12 g-col-12">
+                                    <f:form.submit class="btn btn-primary w-100" value="Speichern"/>
+                                </div>
+                            </div>
+                        </f:form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#gradeForm">
+        Leistung hinzufügen
+    </button>
+    <f:if condition="{commentPerformance.gradeType}">
+        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#commentForm">
+            Bemerkungen hinzufügen
+        </button>
+    </f:if>
+</div>
+
+<div class="mt-5">
+    <div data-selector="performance-container" data-delete-ajax-url="{f:uri.page(absolute: 1, pageUid: 7, pageType: 8009)}">
+
+        <div class="container-xxl container-xl container-lg">
+            <f:form method="POST" enctype="multipart/form-data" objectName="performanceSearch" name="performanceSearch" object="{performanceSearch}"
+                    action="filter"
+                    controller="Performance"
+                    pluginName="AjaxFilterPerformance"
+                    extensionName="ChanathaleGso"
+                    additionalAttributes="{
+                        data-ajax: '{f:uri.page(absolute: 1, pageUid: 7, pageType: 8003)}'
+                        }"
+            >
+
+                <div class="grid g-3">
+                    <div class="g-col-xxl-4 g-col-xl-4 g-col-lg-4 g-col-md-12 g-col-sm-12 g-col-12">
+                        <div class="form-floating mb-4">
+                            <f:form.select class="form-select" id="{data.uid}-performancesearch-form-class" property="subject" options="{subjects}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Alle"/>
+                            <label for="{data.uid}-performancesearch-form-class">Schulfach</label>
+                        </div>
+                    </div>
+                    <div class="g-col-xxl-4 g-col-xl-4 g-col-lg-4 g-col-md-12 g-col-sm-12 g-col-12">
+                        <div class="form-floating mb-4">
+                            <f:form.select class="form-select" id="{data.uid}-grade-type-form-class" property="gradeType" options="{gradeTypes}" optionValueField="uid" optionLabelField="title" prependOptionValue="0" prependOptionLabel="Alle"/>
+                            <label for="{data.uid}-grade-type-form-class">Leistungsart</label>
+                        </div>
+                    </div>
+
+                    <f:form.hidden property="pupil"/>
+
+                    <div class="g-col-xxl-4 g-col-xl-4 g-col-lg-4 g-col-md-12 g-col-sm-12 g-col-12">
+                        <f:form.submit class="btn btn-primary btn-lg w-100 mb-3" value="Filter anwenden"/>
+                    </div>
+                </div>
+
+            </f:form>
+        </div>
+
+        <div data-selector="performance-list">
+            <f:if condition="{grades}">
+                <f:then>
+                    <f:render partial="Performance/List" section="List" arguments="{performances: grades, gradeTypes: gradeTypes, allSubjects: allSubjects, subjects: allSubjects, allGradeTypes: allGradeTypes, search: performanceSearch, hasPerformances: hasPerformances}"/>
+                </f:then>
+                <f:else>
+                    <div class="container-xxl container-xl container-lg">
+                        <p class="d-flex justify-content-center">Es wurde keine Leistungen oder Bemerkungen gefunden.</p>
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+
+    </div>
+</div>
+
+</html>

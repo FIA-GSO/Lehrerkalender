@@ -1,0 +1,35 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{subjects}">
+    <f:variable name="index" value="0"/>
+
+    <div class="container-xxl container-xl container-lg container-md">
+        <f:for each="{subjects}" as="subject">
+
+            <f:if condition="{index} == 0">
+                <div class="grid g-3 mt-1">
+            </f:if>
+
+            <div class="g-col-xxl-4 g-col-xl-4 g-col-lg-4 g-col-md-12 g-col-sm-12">
+                <f:link.action action="show" controller="Subject" pluginName="SubjectDetail" pageUid="45" extensionName="ChanathaleGso" arguments="{subject: subject}" class="card classroom-card border-0 rounded-0" additionalAttributes="{data-selector: 'subject-record'}">
+                    <div class="card-body">
+                        <h3 class="d-flex justify-content-center">{subject.title}</h3>
+                    </div>
+                </f:link.action>
+            </div>
+
+            <f:variable name="index" value="{index+1}"/>
+
+            <f:if condition="{index} == 3">
+    </div>
+    <f:variable name="index" value="0"/>
+</f:if>
+
+</f:for>
+</div>
+</f:if>
+
+</html>

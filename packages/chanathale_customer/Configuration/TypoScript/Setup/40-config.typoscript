@@ -1,0 +1,10 @@
+config {
+
+    pageTitleProviders {
+        chanathaleTitleProvider {
+            provider = Chanathale\ChanathaleBase\Provider\PageTitleProvider
+            before = record
+            after = altPageTitle
+        }
+    }
+}

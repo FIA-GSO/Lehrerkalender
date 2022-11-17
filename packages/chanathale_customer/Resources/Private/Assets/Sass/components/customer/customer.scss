@@ -1,0 +1,27 @@
+$primary--color: #35C623;
+$primary--color-2: #E55812;
+$secondary--color: #0E4749;
+$secondary--color-2: #EFE7DA;
+$white--color: #EFE7DA;
+$black--color: #002626;
+$background-white: #EFE7DA;
+$font-color-dark: #002626;
+
+@media(max-width: 576px) {
+
+  .d-xs-none {
+    display: none;
+  }
+
+  .d-xs-block {
+    display: block;
+  }
+
+  .d-xs-flex {
+    display: flex;
+  }
+}
+
+main {
+  min-height: 75vh;
+}

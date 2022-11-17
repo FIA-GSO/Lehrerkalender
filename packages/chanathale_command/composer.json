@@ -1,0 +1,24 @@
+{
+  "name": "chanathale/command",
+  "description": "chanathale Command",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0-or-later",
+  "version": "11.5.0",
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "chanathale_command"
+    }
+  },
+  "require": {
+    "typo3/cms-core": "^11.5",
+    "php": ">=8.0 <8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chanathale\\ChanathaleCommand\\": "Classes"
+    }
+  }
+}

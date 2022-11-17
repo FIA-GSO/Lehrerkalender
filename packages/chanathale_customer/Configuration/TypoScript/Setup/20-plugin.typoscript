@@ -1,0 +1,25 @@
+plugin {
+
+    tx_seo {
+        settings {
+            xmlSitemap {
+                sitemaps {
+                    pages {
+                        # cat=plugin.tx_seo/sitemap; type=string; label=Doktypes to exclude
+                        excludedDoktypes = 3, 4, 6, 7, 199, 254, 255
+                        # cat=plugin.tx_seo/sitemap; type=string; label=Additional where clause
+                        # additionalWhere = tx_mindshapepages_exclude_from_xml_sitemap = 0
+                    }
+                }
+            }
+        }
+    }
+
+    tx_felogin_login {
+
+        view {
+            templateRootPaths.100 = EXT:chanathale_customer/Resources/Private/Templates/Ext/FrontendLogin/
+            partialRootPaths.100 = EXT:chanathale_customer/Resources/Private/Partials/Ext/FrontendLogin/
+        }
+    }
+}

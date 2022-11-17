@@ -1,0 +1,53 @@
+TCAdefaults {
+    tt_content {
+        header_layout = 2
+        header_position = left
+        space_before_class = none
+        space_after_class = medium
+        imageorient = 0
+    }
+
+    pages {
+        fe_login_mode = 1
+    }
+}
+
+[traverse(request.getParsedBody(), 'defVals/tt_content/colPos') == 0 || traverse(request.getParsedBody(), 'defVals/tt_content/colPos') == 220 || traverse(request.getParsedBody(), 'defVals/tt_content/colPos') == 210 || traverse(request.getParsedBody(), 'defVals/tt_content/colPos') == 999]
+    TCAdefaults {
+        tt_content {
+            space_after_class = none
+        }
+    }
+[end]
+
+[traverse(request.getQueryParams(), 'defVals/tt_content/colPos') == 0 || traverse(request.getQueryParams(), 'defVals/tt_content/colPos') == 220 || traverse(request.getQueryParams(), 'defVals/tt_content/colPos') == 210 || traverse(request.getQueryParams(), 'defVals/tt_content/colPos') == 999]
+    TCAdefaults {
+        tt_content {
+            space_after_class = none
+        }
+    }
+[end]
+
+[traverse(request.getParsedBody(), 'defVals/tt_content/CType') == 'form_formframework' || traverse(request.getParsedBody(), 'defVals/tt_content/CType') == 'mask_trustelement']
+    TCAdefaults {
+        tt_content {
+            header_layout = 3
+        }
+    }
+[end]
+
+[traverse(request.getQueryParams(), 'defVals/tt_content/CType') == 'form_formframework' || traverse(request.getQueryParams(), 'defVals/tt_content/CType') == 'mask_trustelement']
+    TCAdefaults {
+        tt_content {
+            header_layout = 3
+        }
+    }
+[end]
+
+[isNestedMaskContentElement(request.getParsedBody()) === 1]
+    TCAdefaults {
+        tt_content {
+            space_after_class = none
+        }
+    }
+[end]

@@ -1,0 +1,438 @@
+{
+    "version": "7.2.0",
+    "tables": {
+        "tt_content": {
+            "elements": {
+                "gallary": {
+                    "color": "#000000",
+                    "colorOverlay": "#000000",
+                    "columns": [
+                        "tx_mask_dd984fbb6c93c",
+                        "tx_mask_0e3e8a8f7d66b",
+                        "tx_mask_da80b75fe4d1f"
+                    ],
+                    "description": "",
+                    "descriptions": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "icon": "",
+                    "iconOverlay": "",
+                    "key": "gallary",
+                    "label": "Bildergalerie",
+                    "labels": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "shortLabel": "",
+                    "sorting": 1
+                }
+            },
+            "palettes": {
+                "tx_mask_0e3e8a8f7d66b": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_gallary_slider_effect"
+                    ]
+                },
+                "tx_mask_da80b75fe4d1f": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "tx_mask_gallary_items"
+                    ]
+                },
+                "tx_mask_dd984fbb6c93c": {
+                    "description": "",
+                    "label": "",
+                    "showitem": [
+                        "header",
+                        "tx_mask_ae2dafcd68ebc",
+                        "tx_mask_subline",
+                        "tx_mask_42fa9d2d7698b",
+                        "header_layout",
+                        "header_position"
+                    ]
+                }
+            },
+            "sql": {
+                "tx_mask_gallary_items": {
+                    "tt_content": {
+                        "tx_mask_gallary_items": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_gallary_slider_effect": {
+                    "tt_content": {
+                        "tx_mask_gallary_slider_effect": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                },
+                "tx_mask_subline": {
+                    "tt_content": {
+                        "tx_mask_subline": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "header": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "fullKey": "header",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7",
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "header": "tx_mask_cd65d59e47253",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "header",
+                    "label": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "order": {
+                        "accordeon": 1,
+                        "gallary": 1,
+                        "header": 1,
+                        "headline": 1
+                    },
+                    "type": "string"
+                },
+                "header_layout": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "fullKey": "header_layout",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7",
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "header": "tx_mask_cd65d59e47253",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "header_layout",
+                    "label": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "order": {
+                        "accordeon": 5,
+                        "gallary": 5,
+                        "header": 7,
+                        "headline": 5
+                    },
+                    "type": "select"
+                },
+                "header_position": {
+                    "coreField": 1,
+                    "description": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "headline": ""
+                    },
+                    "fullKey": "header_position",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "accordeon": "tx_mask_beb8344709ed7",
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "header_position",
+                    "label": {
+                        "accordeon": "",
+                        "gallary": "",
+                        "headline": ""
+                    },
+                    "order": {
+                        "accordeon": 6,
+                        "gallary": 6,
+                        "headline": 6
+                    },
+                    "type": "select"
+                },
+                "tx_mask_0e3e8a8f7d66b": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_0e3e8a8f7d66b",
+                    "key": "0e3e8a8f7d66b",
+                    "type": "palette"
+                },
+                "tx_mask_42fa9d2d7698b": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "gallary": ""
+                    },
+                    "fullKey": "tx_mask_42fa9d2d7698b",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "gallary": "tx_mask_dd984fbb6c93c"
+                    },
+                    "key": "42fa9d2d7698b",
+                    "label": {
+                        "gallary": ""
+                    },
+                    "order": {
+                        "gallary": 4
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_ae2dafcd68ebc": {
+                    "config": {
+                        "type": "linebreak"
+                    },
+                    "description": {
+                        "gallary": ""
+                    },
+                    "fullKey": "tx_mask_ae2dafcd68ebc",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "gallary": "tx_mask_dd984fbb6c93c"
+                    },
+                    "key": "ae2dafcd68ebc",
+                    "label": {
+                        "gallary": ""
+                    },
+                    "order": {
+                        "gallary": 2
+                    },
+                    "type": "linebreak"
+                },
+                "tx_mask_da80b75fe4d1f": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_da80b75fe4d1f",
+                    "key": "da80b75fe4d1f",
+                    "type": "palette"
+                },
+                "tx_mask_dd984fbb6c93c": {
+                    "config": {
+                        "type": "palette"
+                    },
+                    "fullKey": "tx_mask_dd984fbb6c93c",
+                    "key": "dd984fbb6c93c",
+                    "type": "palette"
+                },
+                "tx_mask_gallary_items": {
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "new": 1,
+                                "sort": 1
+                            },
+                            "levelLinksPosition": "top",
+                            "showAllLocalizationLink": 1,
+                            "showNewRecordLink": 1,
+                            "showPossibleLocalizationRecords": 1,
+                            "useSortable": 1
+                        },
+                        "foreign_field": "parentid",
+                        "foreign_sortby": "sorting",
+                        "foreign_table": "--inlinetable--",
+                        "foreign_table_field": "parenttable",
+                        "maxitems": "10",
+                        "minitems": "0",
+                        "type": "inline"
+                    },
+                    "description": {
+                        "gallary": ""
+                    },
+                    "fullKey": "tx_mask_gallary_items",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "gallary": "tx_mask_da80b75fe4d1f"
+                    },
+                    "key": "gallary_items",
+                    "label": {
+                        "gallary": "Bilder"
+                    },
+                    "order": {
+                        "gallary": 1
+                    },
+                    "type": "inline"
+                },
+                "tx_mask_gallary_slider_effect": {
+                    "config": {
+                        "fieldWizard": {
+                            "selectIcons": {
+                                "disabled": 1
+                            }
+                        },
+                        "items": [
+                            [
+                                "W\u00fcrfel",
+                                "cube",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Verschwindend",
+                                "fade",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Coverflow",
+                                "coverflow",
+                                "",
+                                ""
+                            ],
+                            [
+                                "Karten",
+                                "cards",
+                                "",
+                                ""
+                            ]
+                        ],
+                        "renderType": "selectSingle",
+                        "type": "select"
+                    },
+                    "description": {
+                        "gallary": ""
+                    },
+                    "fullKey": "tx_mask_gallary_slider_effect",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "gallary": "tx_mask_0e3e8a8f7d66b"
+                    },
+                    "key": "gallary_slider_effect",
+                    "label": {
+                        "gallary": "Galerie - Effekt"
+                    },
+                    "order": {
+                        "gallary": 1
+                    },
+                    "type": "select"
+                },
+                "tx_mask_subline": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "description": {
+                        "gallary": "",
+                        "header": "",
+                        "headline": ""
+                    },
+                    "fullKey": "tx_mask_subline",
+                    "inPalette": 1,
+                    "inlineParent": {
+                        "gallary": "tx_mask_dd984fbb6c93c",
+                        "header": "tx_mask_cd65d59e47253",
+                        "headline": "tx_mask_a733e23b2a144"
+                    },
+                    "key": "subline",
+                    "label": {
+                        "gallary": "Unterzeile",
+                        "header": "Unterzeile",
+                        "headline": "Unterzeile"
+                    },
+                    "order": {
+                        "gallary": 3,
+                        "header": 4,
+                        "headline": 3
+                    },
+                    "type": "string"
+                }
+            }
+        },
+        "tx_mask_gallary_items": {
+            "sql": {
+                "tx_mask_gallary_items_description": {
+                    "tx_mask_gallary_items": {
+                        "tx_mask_gallary_items_description": "mediumtext"
+                    }
+                },
+                "tx_mask_gallary_items_image": {
+                    "tx_mask_gallary_items": {
+                        "tx_mask_gallary_items_image": "int(11) unsigned DEFAULT '0' NOT NULL"
+                    }
+                },
+                "tx_mask_gallary_items_title": {
+                    "tx_mask_gallary_items": {
+                        "tx_mask_gallary_items_title": "varchar(255) DEFAULT '' NOT NULL"
+                    }
+                }
+            },
+            "tca": {
+                "tx_mask_gallary_items_description": {
+                    "config": {
+                        "type": "text",
+                        "wrap": "virtual"
+                    },
+                    "fullKey": "tx_mask_gallary_items_description",
+                    "inlineParent": "tx_mask_gallary_items",
+                    "key": "gallary_items_description",
+                    "label": "Beschreibung",
+                    "order": 2,
+                    "type": "text"
+                },
+                "tx_mask_gallary_items_image": {
+                    "allowedFileExtensions": "png,jpeg,jpg,gif",
+                    "config": {
+                        "appearance": {
+                            "collapseAll": 1,
+                            "elementBrowserEnabled": 1,
+                            "enabledControls": {
+                                "delete": 1,
+                                "dragdrop": 1,
+                                "hide": 1,
+                                "info": 1,
+                                "localize": 1,
+                                "sort": 0
+                            },
+                            "fileUploadAllowed": 0,
+                            "useSortable": 1
+                        },
+                        "foreign_table": "sys_file_reference",
+                        "maxitems": "1",
+                        "minitems": "0",
+                        "type": "inline"
+                    },
+                    "description": "600 x 400 Pixel ( 3 : 2 Seitenverh\u00e4ltnis )",
+                    "fullKey": "tx_mask_gallary_items_image",
+                    "imageoverlayPalette": 1,
+                    "inlineParent": "tx_mask_gallary_items",
+                    "key": "gallary_items_image",
+                    "label": "Bild",
+                    "order": 3,
+                    "type": "file"
+                },
+                "tx_mask_gallary_items_title": {
+                    "config": {
+                        "type": "input"
+                    },
+                    "fullKey": "tx_mask_gallary_items_title",
+                    "inlineParent": "tx_mask_gallary_items",
+                    "key": "gallary_items_title",
+                    "label": "Titel",
+                    "order": 1,
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

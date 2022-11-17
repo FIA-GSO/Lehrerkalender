@@ -1,0 +1,15 @@
+lib {
+    contentElement {
+        layoutRootPaths {
+            0 = EXT:chanathale_customer/Resources/Private/Layouts/
+        }
+
+        partialRootPaths {
+            0 = EXT:chanathale_customer/Resources/Private/Partials/
+        }
+
+        templateRootPaths {
+            0 = EXT:chanathale_customer/Resources/Private/Templates/Ext/FluidStyledContent/
+        }
+    }
+}

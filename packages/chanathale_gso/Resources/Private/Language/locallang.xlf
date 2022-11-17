@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" product-name="chanathale_gso">
+        <header/>
+        <body>
+            <trans-unit id="plugin.chanathalegso_pupilslist.name">
+                Liste aller Schüler:innen
+            </trans-unit>
+            <trans-unit id="plugin.chanathalegso_pupilslist.description">
+                Plugin für alle Schüler und Schülerinnen darzustellen.
+            </trans-unit>
+
+            <trans-unit id="plugin.chanathalegso_pupilform.name">
+                Schüler:in-Formular
+            </trans-unit>
+            <trans-unit id="plugin.chanathalegso_pupilform.description">
+                Ein Formular, um ein Schüler oder Schülerin anzulegen / bearbeiten.
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

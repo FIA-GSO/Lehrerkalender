@@ -1,0 +1,125 @@
+mod {
+    web_layout {
+        BackendLayouts {
+            default {
+                title = Standard
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Kopfbereich
+                                        colPos = 0
+                                        # https://github.com/IchHabRecht/content_defender/blob/master/README.md
+                                        #disallowed {
+                                        #    CType = header, textmedia, list
+                                        #    list_type = news_pi1
+                                        #}
+                                    }
+                                }
+                            }
+
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Inhaltsbereich
+                                        colPos = 1
+                                        # https://github.com/IchHabRecht/content_defender/blob/master/README.md
+                                        #disallowed {
+                                        #    CType = header, textmedia, list
+                                        #    list_type = news_pi1
+                                        #}
+                                        #maxitems = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            pupildetail {
+                title = Schülerdetail-Layout
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Kopfbereich
+                                        colPos = 0
+                                        # https://github.com/IchHabRecht/content_defender/blob/master/README.md
+                                        #disallowed {
+                                        #    CType = header, textmedia, list
+                                        #    list_type = news_pi1
+                                        #}
+                                    }
+                                }
+                            }
+
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Inhaltsbereich
+                                        colPos = 1
+                                        # https://github.com/IchHabRecht/content_defender/blob/master/README.md
+                                        #disallowed {
+                                        #    CType = header, textmedia, list
+                                        #    list_type = news_pi1
+                                        #}
+                                        #maxitems = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            classroomdetail {
+                title = Klassedetail-Layout
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Kopfbereich
+                                        colPos = 0
+                                        # https://github.com/IchHabRecht/content_defender/blob/master/README.md
+                                        #disallowed {
+                                        #    CType = header, textmedia, list
+                                        #    list_type = news_pi1
+                                        #}
+                                    }
+                                }
+                            }
+
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Inhaltsbereich
+                                        colPos = 1
+                                        # https://github.com/IchHabRecht/content_defender/blob/master/README.md
+                                        #disallowed {
+                                        #    CType = header, textmedia, list
+                                        #    list_type = news_pi1
+                                        #}
+                                        #maxitems = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

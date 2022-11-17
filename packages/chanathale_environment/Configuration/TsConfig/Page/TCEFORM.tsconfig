@@ -1,0 +1,403 @@
+TCEFORM {
+    pages {
+        abstract {
+            disabled = 1
+        }
+
+        author {
+            disabled = 1
+        }
+
+        author_email {
+            disabled = 1
+        }
+
+        backend_layout {
+            removeItems = -1
+        }
+
+        backend_layout_next_level {
+            removeItems = -1
+        }
+
+        cache_tags {
+            disabled = 1
+        }
+
+        cache_timeout {
+            disabled = 1
+        }
+
+        categories {
+            disabled = 1
+        }
+
+        content_from_pid {
+            disabled = 1
+        }
+
+        editlock {
+            disabled = 1
+        }
+
+        extendToSubpages {
+            disabled = 1
+        }
+
+        fe_group {
+            disabled = 1
+        }
+
+        fe_login_mode {
+            disabled = 1
+        }
+
+        keywords {
+            disabled = 1
+        }
+
+        l18n_cfg {
+            disabled = 1
+        }
+
+        lastUpdated {
+            disabled = 1
+        }
+
+        layout {
+            disabled = 1
+        }
+
+        module {
+            disabled = 1
+        }
+
+        nav_title {
+        }
+
+        newUntil {
+            disabled = 1
+        }
+
+        php_tree_stop {
+            disabled = 1
+        }
+
+        rowDescription {
+            disabled = 1
+        }
+
+        seo_title {
+        }
+
+        subtitle {
+            disabled = 1
+        }
+
+        target {
+            disabled = 1
+        }
+
+        title {
+        }
+
+        TSconfig {
+            disabled = 1
+        }
+
+        tsconfig_includes {
+            disabled = 1
+        }
+
+        twitter_card {
+            disabled = 1
+        }
+
+        twitter_description {
+            disabled = 1
+        }
+
+        twitter_image {
+            disabled = 1
+        }
+
+        twitter_title {
+            disabled = 1
+        }
+    }
+
+    tt_content {
+        accessibility_title {
+            disabled = 1
+        }
+
+        accessibility_bypass {
+            disabled = 1
+        }
+
+        accessibility_bypass_text {
+            disabled = 1
+        }
+
+        assets {
+            config.maxitems = 1
+        }
+
+        categories {
+            disabled = 1
+        }
+
+        colPos {
+            disabled = 0
+        }
+
+        CType {
+            removeItems = header, text, textpic, image, bullets, table, uploads, div, mailform, menu, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_sitemap_pages, menu_pages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap
+        }
+
+        date {
+            disabled = 1
+        }
+
+        editlock {
+            disabled = 1
+        }
+
+        fe_group {
+            disabled = 0
+        }
+
+        frame_class {
+            removeItems = ruler-before, ruler-after, indent, indent-left, indent-right, none
+            disabled = 1
+        }
+
+        header_layout {
+            addItems {
+                7 = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:header_layout.7
+            }
+
+            altLabels {
+                1 = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:header_layout.1
+                2 = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:header_layout.2
+                3 = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:header_layout.3
+                4 = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:header_layout.4
+                100 = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:header_layout.100
+            }
+
+            removeItems = 5,6,0
+        }
+
+        header_link {
+            disabled = 1
+        }
+
+        header_position {
+            keepItems = left,center
+        }
+
+        imageborder {
+            disabled = 1
+        }
+
+        imagecols {
+            disabled = 1
+        }
+
+        imagewidth {
+            disabled = 1
+        }
+
+        imageorient {
+            removeItems = 1,2,9,10,17,18
+        }
+
+        layout {
+            removeItems = 0,3
+        }
+
+        linkToTop {
+            disabled = 1
+        }
+
+        pages {
+            disabled = 1
+
+            types.menu_subpages.disabled = 0
+        }
+
+        recursive {
+            disabled = 1
+        }
+
+        rowDescription {
+            disabled = 1
+        }
+
+        sectionIndex {
+            disabled = 1
+        }
+
+        space_before_class {
+            disabled = 1
+        }
+
+        space_after_class {
+            addItems {
+                none = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:space_after_class.none
+            }
+
+            altLabels {
+                small = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:space_after_class.small
+                medium = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:space_after_class.medium
+                large = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:space_after_class.large
+            }
+
+            label = LLL:EXT:chanathale_environment/Resources/Private/Language/locallang.xlf:space_after_class
+
+            removeItems = default,extra-small,extra-large
+        }
+
+        subheader {
+            disabled = 1
+        }
+
+        sys_language_uid {
+            disabled = 1
+        }
+    }
+
+    sys_file_reference {
+        autoplay.disabled = 1
+    }
+
+    tx_mindshapettcontent_domain_model_subcategory {
+        url_slug {
+            disabled = 1
+        }
+    }
+
+    tx_mindshapepages_domain_model_specification {
+        headline {
+            disabled = 1
+        }
+    }
+}
+
+mod.web_list {
+    table {
+        tx_mindshapeselling_domain_model_productsnm {
+            hideTable = 1
+        }
+        tx_mindshapecontactperson_domain_model_plz {
+            hideTable = 1
+        }
+        tx_mindshapeselling_domain_model_sellingopeningtime {
+            hideTable = 1
+        }
+        tx_mindshapettcontent_domain_model_rating {
+            hideTable = 1
+        }
+        tx_mindshapettcontent_domain_model_property {
+            hideTable = 1
+        }
+        tx_mindshapepages_domain_model_download {
+            hideTable = 1
+        }
+        tx_mindshapepages_domain_model_specificationsign {
+            hideTable = 1
+        }
+    }
+}
+
+[traverse(page, 'doktype') == 101]
+    TCEFORM {
+        pages {
+            backend_layout {
+                keepItems = pagets__products
+            }
+
+            backend_layout_next_level {
+                keepItems = pagets__products
+            }
+        }
+    }
+[end]
+
+[traverse(page, 'doktype') == 102]
+    TCEFORM {
+        pages {
+            backend_layout {
+                keepItems = pagets__knowhowarticle
+            }
+
+            backend_layout_next_level {
+                keepItems = pagets__knowhowarticle
+            }
+
+        }
+    }
+[end]
+
+[traverse(page, 'doktype') == 102 && traverse(page, 'tx_mindshapepages_knowhow_is_defaultpage') == 1]
+    TCEFORM {
+        pages {
+            tx_mindshapepages_knowhow_subtitle.disabled = 1
+            tx_mindshapepages_knowhow_image.disabled = 1
+        }
+    }
+[end]
+
+[traverse(page, 'doktype') == 103]
+    TCEFORM {
+        pages {
+            backend_layout {
+                keepItems = pagets__products
+            }
+
+            backend_layout_next_level {
+                keepItems = pagets__products
+            }
+        }
+    }
+[end]
+
+[traverse(page, 'doktype') == 101 || traverse(page, 'doktype') == 102 || traverse(page, 'doktype') == 103]
+    TCEFORM {
+        pages {
+            subtitle.disabled = 1
+            fe_group.disabled = 0
+            fe_login_mode.disabled = 0
+            nav_title.disabled = 0
+            #layout.disabled = 1
+            newUntil.disabled = 1
+            backend_layout.disabled = 1
+            backend_layout_next_level.disabled = 1
+            content_from_pid.disabled = 1
+            alias.disabled = 1
+            target.disabled = 1
+            url_scheme.disabled = 1
+            cache_timeout.disabled = 1
+            cache_tags.disabled = 1
+            no_cache.disabled = 1
+            l18n_cfg.disabled = 1
+            is_siteroot.disabled = 1
+            editlock.disabled = 1
+            php_tree_stop.disabled = 1
+            module.disabled = 1
+            media.disabled = 1
+            tsconfig_includes.disabled = 1
+            TSconfig.disabled = 1
+            categories.disabled = 1
+            rowDescription.disabled = 1
+        }
+    }
+[end]
+
+[traverse(page, 'doktype') == 254]
+    TCEFORM {
+        tt_content {
+            assets.config.maxitems = 3
+        }
+    }
+[end]

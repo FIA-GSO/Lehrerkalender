@@ -1,0 +1,19 @@
+TCEMAIN {
+    permissions {
+        userid = 4
+        groupid = 1
+        user = show, editcontent, edit, new, delete
+        group = show, editcontent, edit, new, delete
+        everybody = show, editcontent, edit, new
+    }
+
+    table {
+        pages {
+            disablePrependAtCopy = 1
+        }
+
+        tt_content {
+            disablePrependAtCopy = 1
+        }
+    }
+}

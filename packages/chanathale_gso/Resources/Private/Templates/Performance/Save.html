@@ -1,0 +1,15 @@
+<html data-namespace-typo3-fluid="true" lang="de"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:cb="http://typo3.org/ns/Chanathale/ChanathaleBase/ViewHelpers"
+        xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{renderType} == 'new'">
+    <f:then>
+        <f:render partial="Performance/List" section="List" arguments="{performances: grades, gradeTypes: gradeTypes, search: performanceSearch, allGradeTypes: allGradeTypes, subjects: allSubjects, allSubjects: allSubjects, hasPerformances: hasPerformances}"/>
+    </f:then>
+    <f:else>
+        <f:render partial="Performance/List" section="PerformanceCard" arguments="{performance: performance, settings: settings}"/>
+    </f:else>
+</f:if>
+
+</html>
