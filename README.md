@@ -47,6 +47,9 @@ Als Frontend-Framework verwenden wir vanilla Bootstrap 5.2 das über npm install
   gewohnte Programmiersprache umzusetzen würde den Aufwand und Zeit erhöhen.
 - TYPO3 bietet bereits ein Frontend-Login Bereich an, und dadurch müssen wir nicht selbst ein Loginlogik programmieren,
   und dadurch sehr viel Zeit bei der Umsetzung spart.
-- 
+- Es bietet bereits das Verwalten der benötigen Datensätzen (Raum, Leistungs, Schüler , Klasse usw...) wodurch wir keine
+  SQL-Statement selber schreiben müssen, da es von TYPO3 bereits welche zu Verfügung gibt. Der Vorteil dadurch ist das
+  wir Zeit sparen und mehr Puffer haben für Testing und anderen Features,
+- PHP eignete sich gut für Webtools wie der Lehrerkalender.
 
 
