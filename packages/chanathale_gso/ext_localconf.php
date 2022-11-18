@@ -27,7 +27,7 @@ call_user_func(function ($extKey) {
         ],
         // non-cacheable actions
         [
-            \Chanathale\ChanathaleGso\Controller\PupilController::class => '',
+            \Chanathale\ChanathaleGso\Controller\PupilController::class => 'list',
         ]
     );
 
@@ -39,7 +39,7 @@ call_user_func(function ($extKey) {
         ],
         // non-cacheable actions
         [
-            \Chanathale\ChanathaleGso\Controller\SubjectController::class => '',
+            \Chanathale\ChanathaleGso\Controller\SubjectController::class => 'list',
         ]
     );
 
@@ -51,7 +51,7 @@ call_user_func(function ($extKey) {
         ],
         // non-cacheable actions
         [
-            \Chanathale\ChanathaleGso\Controller\PupilController::class => '',
+            \Chanathale\ChanathaleGso\Controller\PupilController::class => 'form',
         ]
     );
 
@@ -87,7 +87,7 @@ call_user_func(function ($extKey) {
         ],
         // non-cacheable actions
         [
-            \Chanathale\ChanathaleGso\Controller\ClassroomController::class => '',
+            \Chanathale\ChanathaleGso\Controller\ClassroomController::class => 'form',
         ]
     );
 
