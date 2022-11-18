@@ -15,7 +15,7 @@ call_user_func(function ($extKey) {
         ],
         // non-cacheable actions
         [
-            FrontendLoginController::class => '',
+            FrontendLoginController::class => 'showStatus',
         ]
     );
 
