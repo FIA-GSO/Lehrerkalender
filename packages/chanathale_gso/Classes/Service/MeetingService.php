@@ -69,6 +69,7 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return void
      */
     public function setFullCalendarData (Meeting &$meeting) : void {
+        date_default_timezone_set('Europe/Berlin');
         // Format 2022-09-26T07:45:00
         // wandelt die Startzeit und das Datum in den Forma tin dme der Kalender braucht.
         $dateTime = date('Y-m-d', ((int) $meeting->getCreateDate())) . 'T' . (date('h:i:s', strtotime($meeting->getStartTime())));
@@ -84,6 +85,7 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return bool
      */
     public function addMeeting (Meeting $meeting) : bool {
+        date_default_timezone_set('Europe/Berlin');
         // Fügt Meeting ins DB
         $feUser = $this->userService->getFeUserData();
         $meeting->setAuthor($feUser['uid'] ?? 0);
@@ -107,6 +109,7 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return bool
      */
     public function updateMeeting (Meeting $meeting) : bool {
+        date_default_timezone_set('Europe/Berlin');
         // update den Datensatz
         $feUser = $this->userService->getFeUserData();
         $meeting->setAuthor($feUser['uid'] ?? 0);
@@ -129,6 +132,7 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return bool
      */
     public function hasMeeting (Meeting $meeting) : bool {
+        date_default_timezone_set('Europe/Berlin');
         // Prüft ob das Meeting schon in der DB gibt.
         if (!empty($meeting->getUid())) {
             $foundMeeting = $this->meetingRepository->findOneByUid($meeting->getUid());
@@ -146,6 +150,7 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return QueryResultInterface|null
      */
     public function findAllMeetingsByFrontendUser () : ?QueryResultInterface {
+        date_default_timezone_set('Europe/Berlin');
         // Lädt alle Meetings des Benutzers.
         $feUser = $this->userService->getFeUserData();
         $meetings = $this->meetingRepository->findByAuthor(($feUser['uid'] ?? 0));
@@ -163,6 +168,7 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return array
      */
     public function prepareFullCalendar (?QueryResultInterface $queryResult) : array {
+        date_default_timezone_set('Europe/Berlin');
         $objects = [];
 
         foreach ($queryResult as $record) {
@@ -182,6 +188,8 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @return array
      */
     public function prepareFullCalendarModal (Meeting $record) : array {
+        date_default_timezone_set('Europe/Berlin');
+
         return [
             'uid' => $record->getUid(),
             'title' => $record->getTopic() . ' ( ' . $record->getRoom()->getTitle() . ' )',
@@ -197,6 +205,8 @@ class MeetingService implements \TYPO3\CMS\Core\SingletonInterface {
      * @throws IllegalObjectTypeException
      */
     public function deleteMeetingByUid (int $uid) : bool {
+        date_default_timezone_set('Europe/Berlin');
+
         // Löscht das Meeting aus der DB.
         $object = $this->meetingRepository->findOneByUid($uid);
         if ($object instanceof Meeting) {

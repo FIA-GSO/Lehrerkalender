@@ -73,6 +73,7 @@ class CalendarService implements SingletonInterface {
      * @return array|null
      */
     public function getEvents () : ?array {
+        date_default_timezone_set('Europe/Berlin');
         $feUser = $this->getFeUserUid();
 
         if (!empty($feUser)) {
@@ -163,6 +164,7 @@ class CalendarService implements SingletonInterface {
      * @return array|null
      */
     public function saveEvent (Event $event) : ?array {
+        date_default_timezone_set('Europe/Berlin');
         $feUser = $this->getFeUserUid();
 
         if (!empty($feUser)) {
@@ -227,6 +229,7 @@ class CalendarService implements SingletonInterface {
      * @throws Exception
      */
     public function addEvent (Event $event) : ?array {
+        date_default_timezone_set('Europe/Berlin');
         $feUser = $this->getFeUserUid();
 
         if (!empty($feUser)) {
@@ -292,6 +295,7 @@ class CalendarService implements SingletonInterface {
      * @return bool
      */
     public function deleteEventByJsonKey (int $jsonKey) : bool {
+        date_default_timezone_set('Europe/Berlin');
         $feUser = $this->getFeUserUid();
 
         // Liest die JSON des aktuellen Benutzer und falls es die nicht gibt erstellt die.
