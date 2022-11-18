@@ -2,30 +2,6 @@
 
 defined('TYPO3') || die('Access denied.');
 
-// DB
-$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = 'lehrerkalender'; # §§§DEVELOPMENT_DB_NAME§§§
-$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = 'localhost'; # §§§DEVELOPMENT_DB_HOSTNAME_OR_IP§§§
-$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = 'ApfelteeGSOSchule'; # §§§DEVELOPMENT_DB_PASSWORD§§§
-$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = 'apfeltee'; # §§§DEVELOPMENT_DB_USERNAME§§§
-
-// MAIL
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['defaultMailFromAddress'] = 'noreply@thescape.de';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['defaultMailReplyToAddress'] = '';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['defaultMailFromName'] = '';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['defaultMailReplyToName'] = '';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport'] = 'smtp';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_server'] = 'mail.thescape.de:587';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_encrypt'] = true;
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_password'] = '%,IfUNdLED,21';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_username'] = 'noreply@thescape.de';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_sendmail_command'] = '';
-$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_stream_options'] = [
-    'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false
-    ]
-];
-
 // GFX
 $GLOBALS['TYPO3_CONF_VARS']['GFX']['processor'] = 'ImageMagick';
 $GLOBALS['TYPO3_CONF_VARS']['GFX']['processor_path'] = '/opt/homebrew/bin/';
