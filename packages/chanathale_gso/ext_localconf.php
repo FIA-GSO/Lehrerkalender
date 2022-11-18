@@ -254,8 +254,8 @@ call_user_func(function ($extKey) {
                 elements {
                     pupilslist {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilslist.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilslist.description
+                        title = Schüler-Tabelle
+                        description = Tabelle aller Schüler, die der Frontend-Benutzer eingepflegt hat.
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_pupilslist
@@ -263,8 +263,8 @@ call_user_func(function ($extKey) {
                     }
                     pupilform {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Schüler anlegen - Formular
+                        description = Ein Webformular, um ein Schüler:in anzulegen.
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_pupilform
@@ -272,8 +272,8 @@ call_user_func(function ($extKey) {
                     }
                     pupildetail {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Schülerdetail 
+                        description = bitte nicht verwenden
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_pupildetail
@@ -281,8 +281,8 @@ call_user_func(function ($extKey) {
                     }
                     classroomlist {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Liste der Klassen
+                        description = Eine Liste aller Klassen, die der Frontend-Benutzer gepflegt hat.
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_classroomlist
@@ -290,8 +290,8 @@ call_user_func(function ($extKey) {
                     }
                     classroomform {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Klasse anlegen - Formular
+                        description = Ein Webformular, wo man eine Klassen pflegen kann.
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_classroomform
@@ -299,8 +299,8 @@ call_user_func(function ($extKey) {
                     }
                     classroomdetail {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Klassendetail
+                        description = bitte nicht verwenden
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_classroomdetail
@@ -308,8 +308,8 @@ call_user_func(function ($extKey) {
                     }
                     subjectslist {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Liste der Fächer
+                        description = Liste aller Fächer, die der Frontend - Benutzer zugewiesen bekommen hat.
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_subjectslist
@@ -317,8 +317,8 @@ call_user_func(function ($extKey) {
                     }
                     subjectdetail {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Fächerdetail
+                        description = bitte nicht verwenden
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_subjectdetail
@@ -326,8 +326,8 @@ call_user_func(function ($extKey) {
                     }
                     calendar {
                         iconIdentifier = chanathale-gso-default
-                        title = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.name
-                        description = LLL:EXT:chanathale_gso/Resources/Private/Language/locallang.xlf:plugin.chanathalegso_pupilform.description
+                        title = Kalender
+                        description = Kalender für Termine / Stundeplan
                         tt_content_defValues {
                             CType = list
                             list_type = chanathalegso_calendar
